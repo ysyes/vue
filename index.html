@@ -48,9 +48,9 @@
 							vm = this;
 							axios.get('https://yesno.wtf/api')
 							.then(function (response) {
-								if(response.data.answer == "yes" && vm.yes.length < 10){
+								if(response.data.answer == "yes" && vm.yes.length < 10 && vm.yes.indexOf(response.data.image) == -1){
 									vm.yes.push(response.data.image);
-								}else if(vm.no.length < 10){
+								}else if(vm.no.length < 10 && vm.no.indexOf(response.data.image) == -1){
 									vm.no.push(response.data.image);
 								}
 								vm.ajax();
