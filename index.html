@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<style type="text/css">
+			#app div{
+				float: left;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div id="left">
+				<h2>YES {{yeslength}}</h2>
+				<img v-for="url in yes" :src="url"/>
+			</div>
+			<div id="right">
+				<h2>NO {{nolength}}</h2>
+				<img v-for="url in no" :src="url"/>
+			</div>
+		</div>
+			
+		<script>
+			var app = new Vue({
+				el:"#app",
+				data:{
+					yes:[],
+					no:[]
+				},
+				created:function () {
+					this.ajax();
+				},
+				computed:{
+					yeslength:function () {
+						return this.yes.length;
+					},
+					nolength:function () {
+						return this.no.length;
+					}
+				},
+				methods:{
+					ajax:function(){
+						if (this.yes.length < 10 || this.no.length < 10) {
+							vm = this;
+							axios.get('https://yesno.wtf/api')
+							.then(function (response) {
+								if(response.data.answer == "yes" && vm.yes.length < 10){
+									vm.yes.push(response.data.image);
+								}else if(vm.no.length < 10){
+									vm.no.push(response.data.image);
+								}
+								vm.ajax();
+							})
+							.catch(function (error){
+								vm.answer = 'Error! Could not reach the API. ' + error
+							})
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

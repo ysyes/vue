@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>介绍</title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{message}}
+		</div>
+		<div id="app2">
+			<span v-bind:title="message">悬停查看</span>
+		</div>
+		<div id="app3">
+			<p v-if="show">显示</p>
+		</div>
+		<div id="app4">
+			<p v-for="i in todos">{{i.name}}</p>
+		</div>
+		<div id="app5">
+			<span>{{message}}</span>
+			<button v-on:click="addNum">+1</button>
+		</div>		
+		<div id="app6">
+			<p>{{message}}</p>
+			<input type="text" v-model="message"/>
+			<todo-item></todo-item>
+		</div>
+		<div id="app7">
+			<todo-name v-for="i in todos" v-bind:todo="i" v-bind:key="i.id"></todo-name>
+		</div>
+		
+		
+		
+		
+		
+		<script type="text/javascript">
+			Vue.component('todo-name',{
+				props:['todo'],
+				template:'<p>姓名:{{todo.name}}&nbsp;&nbsp;年龄:{{todo.age}}</p>'
+			})
+			var app7 = new Vue({
+				el:'#app7',
+				data:{
+					todos:[
+						{name:'姓名1',age:1},
+						{name:'姓名2',age:2},
+						{name:'姓名3',age:3},
+						{name:'姓名4',age:4},
+						{name:'姓名5',age:5}
+					]
+				}
+			})
+			
+			Vue.component('todo-item',{
+				template:'<h3>这是一个模板</h3>'
+			})
+			var app6 = new Vue({
+				el:'#app6',
+				data:{
+					message:'数据绑定'
+				}
+			})
+			var app5 = new Vue({
+				el:'#app5',
+				data:{
+					message:1
+				},
+				methods:{
+					addNum:function () {
+						this.message += 1
+					}
+				}
+			})			
+			var app4 = new Vue({
+				el:'#app4',
+				data:{
+					todos:[
+						{name:'姓名1'},
+						{name:'姓名2'},
+						{name:'姓名3'},
+						{name:'姓名4'},
+						{name:'姓名5'}
+					]
+				}
+			})
+			var app3 = new Vue({
+				el:'#app3',
+				data:{
+					show:true
+				}
+			})
+			var app2 = new Vue({
+				el:'#app2',
+				data:{
+					message:'提示'
+				}
+			})
+			var app = new Vue({
+				el:'#app',
+				data:{
+					message:'111'
+				}
+			})
+		</script>
+	</body>
+</html>

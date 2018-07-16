@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>模板语法</title>
+		<script type="text/javascript" src="vue.js" ></script>
+	</head>
+	<body>
+		<!--v-once只能负值一次，不能修改-->
+		<div id="app1" v-once>
+			{{message}}
+			<button v-on:click="addNum">+1</button>
+		</div>
+		
+		<div id="app2" v-html="mes">
+		</div>
+		
+		<div id="app3">
+			<button v-bind:disabled="title">bind</button>
+		</div>
+		
+		<div id="app4" v-bind:title="num+11">
+			{{num>3?'大于3':'小于3'}}
+		</div>
+		<div id="app5">
+			<p v-bind:style="color">{{msg}}</p>
+			<button v-on:click="changColor">变色</button>
+			<a href="vue1.html" v-on:click.prevent="url">阻止跳转</a>
+		</div>
+		<div id="app6">
+			<p :title="msg">{{msg}}</p>
+			<button @click="changMsg">简写</button>
+		</div>
+		<ul id="app7">
+			<li v-for="i in league" @click="altFn(i.name)">{{i.year+i.name}}</li>
+		</ul>
+		<script type="text/javascript">
+			/*文本*/
+			var app1 = new Vue({
+				el:'#app1',
+				data:{
+					message:111
+				},
+				methods:{
+					addNum:function () {
+						this.message += 1;
+					}
+				}
+			})
+			/*HTML*/
+			var app2 = new Vue({
+				el:"#app2",
+				data:{
+					mes:'<h2>HTML</h2>'
+				}
+			})
+			/*特性*/
+			var app3 = new Vue({
+				el:"#app3",
+				data:{
+					title:true
+				}
+			})
+			/*JavaScript表达式*/
+			var app4 = new Vue({
+				el:"#app4",
+				data:{
+					num:1
+				}
+			})
+			/*指令*/
+			var app5 = new Vue({
+				el:'#app5',
+				data:{
+					msg:'我是红色',
+					color:'color:red'
+				},
+				methods:{
+					changColor:function () {
+						this.msg = '我变绿了';
+						this.color = 'color:green'
+					},
+					url:function () {
+						console.log("不能跳转")
+					}
+				}
+			})
+			app5.$watch('msg',function (newmsg,oldmsg) {
+				console.log(oldmsg);
+				console.log(newmsg);
+			})
+			/*缩写*/
+			var app6 = new Vue({
+				el:'#app6',
+				data:{
+					msg:"提示语"
+				},
+				methods:{
+					changMsg:function () {
+						this.msg += 1;
+					}
+				}
+			})
+			var app7 = new Vue({
+				el:"#app7",
+				data:{
+					league:[
+						{
+							year:2018,
+							name:"中超"
+						},{
+							year:2017,
+							name:"中甲"
+						},{
+							year:2016,
+							name:"中乙"
+						}
+					]
+				},
+				methods:{
+					altFn:function (name) {
+						console.log(name)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
