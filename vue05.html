@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Class与 Style绑定</title>
+		<script type="text/javascript" src="vue.js" ></script>
+		<style type="text/css">
+			.color{
+				color: red;
+			}
+			.size{
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--对象-->
+		<div id="app1">
+			<p class="text" :class="{color:color,size:size}">Obj</p>
+		</div>
+		<div id="app2">
+			<p class="text" :class="classObj">Obj</p>
+		</div>
+		<div id="app3">
+			<p class="text" :class="classObj">Obj</p>
+		</div>
+		<!--数组-->
+		<div id="app4">
+			<p class="text" :class="[colorData,sizeData]">Arr</p>
+		</div>
+		<!--5,6效果相同-->
+		<div id="app5">
+			<p class="text" :class="[isActive ? '':colorData,sizeData]">Arr</p>
+		</div>
+		<div id="app6">
+			<p class="text" :class="[{colorData:isActive},sizeData]">Arr</p>
+		</div>
+		
+		
+		<script>
+			/*绑定HTML与style属性*/
+			//1,对象语法
+			var app1 = new Vue({
+				el:"#app1",
+				data:{
+					color:true,
+					size:false
+				}
+			})
+			//不必内联
+			var app2 = new Vue({
+				el:"#app2",
+				data:{
+					classObj:{
+						color:true,
+						size:true
+					}
+				}
+			})
+			//计算语法
+			var app3 = new Vue({
+				el:"#app3",
+				data:{
+					errors:false,
+					title:true
+				},
+				computed:{
+					classObj:function () {
+						return {
+							color:this.errors && this.title,
+							size:this.title || this.errors
+						}
+					}
+				}
+			})
+			//2,数组语法
+			var app4 = new Vue({
+				el:"#app4",
+				data:{
+					colorData:"color",
+					sizeData:"size"
+				}
+			})
+			var app5 = new Vue({
+				el:"#app5",
+				data:{
+					isActive:true,
+					colorData:"color",
+					sizeData:"size"
+				}
+			})
+			var app6 = new Vue({
+				el:"#app6",
+				data:{
+					colorData:"color",
+					sizeData:"size"
+				}
+			})
+		</script>
+	</body>
+</html>
