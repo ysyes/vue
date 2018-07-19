@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>条件渲染</title>
+		<script type="text/javascript" src="lib/vue.js" ></script>
+	</head>
+	<body>
+		<!--v-if-->
+		<div id="app1">
+			<p v-if="data1">ok</p>
+			<!--v-else-if 也必须紧跟在带 v-if 或者 v-else-if 的元素之后-->
+			<p v-else-if="data2">no1</p>
+			<!--v-else 元素必须紧跟在带 v-if 或者 v-else-if 的元素的后面，否则它将不会被识别。-->
+			<p v-else>no2</p>
+			<!--template分组-->
+			<template v-if="data1">
+				<h1>h1</h1>
+				<h2>h2</h2>
+				<h3>h3</h3>
+			</template>
+		</div>		
+		<script>
+			new Vue({
+				el:"#app1",
+				data:{
+					data1:true,
+					data2:false
+				}
+			})
+		</script>
+		<div id="app2">
+			<template v-if="name1">
+				<label>name</label>
+				<input type="text" placeholder="请输入姓名"/>
+			</template>
+			<template v-else>
+				<label>email</label>
+				<input type="text" placeholder="请输入邮箱"/>
+			</template>
+			<button @click="toggle1">切换用户名和email</button>
+			<span>元素复用，切换后输入内容保留</span>
+			<br />
+			<template v-if="name2">
+				<label>name</label>
+				<input type="text" placeholder="请输入姓名" key="name" />
+			</template>
+			<template v-else>
+				<label>email</label>
+				<input type="text" placeholder="请输入邮箱" key="email" />
+			</template>
+			<button @click="toggle2">切换用户名和email</button>
+			<span>添加唯一key属性，切换后重新渲染改变</span>
+		</div>			
+		<script type="text/javascript">
+			var app2 = new Vue({
+				el:'#app2',
+				data:{
+					name1:true,
+					name2:true
+				},
+				methods:{
+					toggle1:function () {
+						if (this.name1) {
+							this.name1 = false;
+						} else{
+							this.name1 = true;
+						}
+					},
+					toggle2:function () {
+						if (this.name2) {
+							this.name2 = false;
+						} else{
+							this.name2 = true;
+						}
+					}
+				}
+			})
+		</script>
+		
+		<!--v-show---只是改变css属性显示隐藏-->
+		<div id="app3">
+			<p v-show="ok">ok</p>
+			<!--v-show不支持template-->
+			<!--<template v-show="ok">
+				<p>1</p>
+				<p>2</p>
+			</template>-->
+		</div>
+		<script type="text/javascript">
+			var app3 = new Vue({
+				el:"#app3",
+				data:{
+					ok:true
+				}
+			})
+		</script>
+		<!--v-if vs v-show
+			v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
+			v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
+			相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。
+			一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。
+			因此，如果需要非常频繁地切换，则使用 v-show 较好；
+			如果在运行时条件很少改变，则使用 v-if 较好。-->
+		
+		
+		<!--当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级。-->
+	</body>
+</html>

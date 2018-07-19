@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>列表渲染</title>
+		<script type="text/javascript" src="lib/vue.js" ></script>
+		<script type="text/javascript" src="lib/axios.min.js" ></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				height: 160px;
+				overflow-x: auto;
+				overflow-y: hidden;
+			}
+			ul{
+				height: 160px;
+				background: #CCCCCC;
+			}
+			li{
+				float: left;
+				width: 160px;
+				height: 160px;
+				text-align: center;
+				list-style: none;
+			}
+			img{
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app1">
+			<ul :style="{width:width}">
+				<li v-for="i in leagueArr">
+					<img :src="i.logo || 'https://tongdaobigdata.oss-cn-beijing.aliyuncs.com/dataimage/logo/league/14969110498059738.png'"/>
+					<p>{{i.name}}</p>
+				</li>
+			</ul>
+		</div>
+		<!--第二参数为当前索引-->
+		<div id="app2">
+			<p v-for="(i,idx) in listData">{{idx + " " + i.name + " " + i.age}}</p>
+			<!--可用of代替in-->
+			<h3 v-for="i of listData">{{i.name}}</h3>
+		</div>
+		<script>
+			var app1 = new Vue({
+				el:"#app1",
+				data:{
+					leagueArr:[]
+				},
+				created:function () {					
+					axios.get('json/leaguelist.json')
+					.then(function (response) {
+						app1.leagueArr = response.data.leagues;
+					})					
+				},
+				computed:{
+					width:function () {
+						return this.leagueArr.length * 160 + 'px'
+					}					
+				}
+			})
+			var app2 = new Vue({
+				el:'#app2',
+				data:{
+					listData:[
+						{name:'name1',age:'age1'},
+						{name:'name2',age:'age2'},
+						{name:'name3',age:'age3'}
+					]
+				}
+			})
+		</script>
+		<!--v-for对象(三个参数value,key,idx)-->
+		<div id="app3">
+			<p v-for="(value,key,idx) in listObj">{{idx+","+ key +" : "+value}}</p>
+		</div>
+		<script>
+			var app3 = new Vue({
+				el:'#app3',
+				data:{
+					listObj:{
+						name:'name',
+						age:'12',
+						sex:'X'
+					}
+				}
+			})
+		</script>
+		
+		
+	</body>
+</html>

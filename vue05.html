@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Class与 Style绑定</title>
-		<script type="text/javascript" src="vue.js" ></script>
+		<script type="text/javascript" src="lib/vue.js" ></script>
 		<style type="text/css">
 			.color{
 				color: red;
@@ -14,9 +14,9 @@
 		</style>
 	</head>
 	<body>
-		<!--对象-->
+		<!-------对象------->
 		<div id="app1">
-			<p class="text" :class="{color:color,size:size}">Obj</p>
+			<p class="text" :class="{color:isActive,size:isError}">Obj</p>
 		</div>
 		<div id="app2">
 			<p class="text" :class="classObj">Obj</p>
@@ -24,18 +24,6 @@
 		<div id="app3">
 			<p class="text" :class="classObj">Obj</p>
 		</div>
-		<!--数组-->
-		<div id="app4">
-			<p class="text" :class="[colorData,sizeData]">Arr</p>
-		</div>
-		<!--5,6效果相同-->
-		<div id="app5">
-			<p class="text" :class="[isActive ? '':colorData,sizeData]">Arr</p>
-		</div>
-		<div id="app6">
-			<p class="text" :class="[{colorData:isActive},sizeData]">Arr</p>
-		</div>
-		
 		
 		<script>
 			/*绑定HTML与style属性*/
@@ -43,8 +31,8 @@
 			var app1 = new Vue({
 				el:"#app1",
 				data:{
-					color:true,
-					size:false
+					isActive:true,
+					isError:false
 				}
 			})
 			//不必内联
@@ -72,7 +60,22 @@
 						}
 					}
 				}
-			})
+			})			
+		</script>
+		
+		
+		<!-------数组------->
+		<div id="app4">
+			<p class="text" :class="[colorData,sizeData]">Arr</p>
+		</div>
+		<!--5,6效果相同-->
+		<div id="app5">
+			<p class="text" :class="[isActive ? '':colorData,sizeData]">Arr</p>
+		</div>
+		<div id="app6">
+			<p class="text" :class="[{colorData:isActive},sizeData]">Arr</p>
+		</div>
+		<script type="text/javascript">
 			//2,数组语法
 			var app4 = new Vue({
 				el:"#app4",
@@ -92,8 +95,74 @@
 			var app6 = new Vue({
 				el:"#app6",
 				data:{
+					isActive:true,
 					colorData:"color",
 					sizeData:"size"
+				}
+			})
+		</script>
+		<!-------模板------->
+		<div id="app7">
+			<my-component class="size">模板</my-component>
+		</div>
+		<div id="app8">
+			<my-component :class="{size:isActive}"></my-component>
+		</div>
+		<script>
+			/*用在组件上*/
+			Vue.component('my-component',{
+				template:'<p class="color">模板</p>'
+			})
+			var app7 = new Vue({
+				el:"#app7"
+			})
+			var app8 = new Vue({
+				el:"#app8",
+				data:{
+					isActive:true
+				}
+			})
+		</script>
+		
+		<!-------绑定内联样式------->
+		<div id="app9">
+			<p :style="{color:activColor,fontSize:size+'px'}">内联</p>
+		</div>
+		<div id="app10">
+			<p :style="styleObj">内联对象</p>
+		</div>
+		<div id="app11">
+			<p :style="[styleObj1,styleObj2]">数组内联对象</p>
+			<p :style="{display:['-webkit-box', 'flex','-ms-flexbox']}">渲染数组最后一个浏览器支持的flex</p>
+		</div>
+		<script>
+			var app9 = new Vue({
+				el:'#app9',
+				data:{
+					activColor:'blue',
+					size:15
+				}
+			})
+			var app10 = new Vue({
+				el:"#app10",
+				data:{
+					styleObj:{
+						color:'blue',
+						fontSize:'15px'
+					}
+				}
+			})
+			var app11 = new Vue({
+				el:"#app11",
+				data:{
+					styleObj1:{
+						color:'blue',
+						width:'120px'
+					},
+					styleObj2:{
+						fontSize:'20px',
+						transform:'rotate(-10deg)'
+					}
 				}
 			})
 		</script>
