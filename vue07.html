@@ -10,7 +10,7 @@
 				margin: 0;
 				padding: 0;
 			}
-			div{
+			#app1{
 				height: 160px;
 				overflow-x: auto;
 				overflow-y: hidden;
@@ -75,10 +75,33 @@
 					]
 				}
 			})
+			//数组更新
+			//1，变异(改变原数组)
+			//push()    新增最后一项
+			//pop()     删除最后一项
+			//shift()   删除第一项
+			//unshift() 新增第一项
+			//splice()  splice(index,howmany,item1,.....,itemX)下标,删除个数，新增为
+			//sort()    排序;拓展：按数字大小排序arr.sort(function(a,b){return a - b})
+			//reverse() 倒序
+			
+			//2，替换数组(不改变原数组)
+			//filter() 过滤，例：app2.listData.filter(function(obj){return obj.age == 'age2'})//返回数组
+			//concat() 链接数组，例：arr1.concat(arr2,arr3,...)
+			//slice(start,end)截取数组，end可不选，标识从start到最后；start可为负，-1代表最后一项；
+			
+			//检测不到的数组变动.不是响应式的
+			//1, vm.items[indexOfItem] = newValue; 利用索引直接设置一项；
+				//可更改为Vue.set(vm.items,indexOfItem,newValue);
+					//等于vm.$set(vm.items, indexOfItem, newValue)
+				//或vm.items.splice(indexOfItem, 1, newValue)；
+			
+			//2, vm.items.length = newLength; 修改数组长度
+				//可更换为vm.items.splice(newLength)
 		</script>
 		<!--v-for对象(三个参数value,key,idx)-->
 		<div id="app3">
-			<p v-for="(value,key,idx) in listObj">{{idx+","+ key +" : "+value}}</p>
+			<p v-for="(value,key,idx) in listObj" :key="idx">{{idx+","+ key +" : "+value}}</p>
 		</div>
 		<script>
 			var app3 = new Vue({
@@ -91,8 +114,17 @@
 					}
 				}
 			})
+			//对象的更新
+			//vue能检测到数据修改，不能检测到对象的新增删除
+			//例：app3.listObj.name = 'name2' 实时更新 app3.listObj.name3 = 'name3'检测不到
+			//可用set来新增实现响应式
+			//例Vue.set(app3.listObj,'name3','name3'); 或 app3.$set(app3.listObj,'name3','name3');
+			
+			
+			
+			
 		</script>
-		
+		<!--尽可能在使用 v-for 时提供 key-->
 		
 	</body>
 </html>
