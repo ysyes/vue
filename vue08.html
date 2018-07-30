@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件处理</title>
+		<script type="text/javascript" src="lib/vue.js" ></script>
+	</head>
+	<body>
+		<div id="app1">
+			<span>{{num}}</span>
+			<!--监听事件-->
+			<button @click="num += 1">+1</button><br />
+			<!--事件处理方法-->
+			<button @click="hello">hello</button><br />
+			<!--内联处理器中的方法-->
+			<button @click="say('hi')">say hi</button>
+			<button @click="say('hello')">say hello</button>
+		</div>
+		<script type="text/javascript">
+			var app1 = new Vue({
+				el:'#app1',
+				data:{
+					num:1
+				},
+				methods:{
+					hello:function (event) {
+						alert('Hello' + this.num);
+						if (event) {
+							//event是原声DOM事件
+							alert(event.target.tagName)
+						}
+					},
+					say:function (msg){
+						alert(msg)
+					}
+				}
+			})
+			//也可直接调用
+			//app1.hello();
+		</script>
+	</body>
+</html>

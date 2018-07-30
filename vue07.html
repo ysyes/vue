@@ -15,18 +15,18 @@
 				overflow-x: auto;
 				overflow-y: hidden;
 			}
-			ul{
+			#app1 ul{
 				height: 160px;
 				background: #CCCCCC;
 			}
-			li{
+			#app1 li{
 				float: left;
 				width: 160px;
 				height: 160px;
 				text-align: center;
 				list-style: none;
 			}
-			img{
+			#app1 img{
 				width: 100px;
 				height: 100px;
 			}
@@ -82,7 +82,7 @@
 			//shift()   删除第一项
 			//unshift() 新增第一项
 			//splice()  splice(index,howmany,item1,.....,itemX)下标,删除个数，新增为
-			//sort()    排序;拓展：按数字大小排序arr.sort(function(a,b){return a - b})
+			//sort()    排序; 拓展：按数字大小排序arr.sort(function(a,b){return a - b})
 			//reverse() 倒序
 			
 			//2，替换数组(不改变原数组)
@@ -120,11 +120,94 @@
 			//可用set来新增实现响应式
 			//例Vue.set(app3.listObj,'name3','name3'); 或 app3.$set(app3.listObj,'name3','name3');
 			
-			
-			
-			
+			//添加多个属性 es6Object.assign(目标对象,对象1,对象2,对象3)
+			//Object.assign(app3.listObj,{name1:"name1",name2:"name2"})//非响应式
+			//将返回值付给原值实现响应式，即
+			//app3.listObj = Object.assign({},app3.listObj,{name1:"name1",name2:"name2"})
 		</script>
 		<!--尽可能在使用 v-for 时提供 key-->
 		
+		<!--显示过滤/排序结果-->
+		<div id="app4">
+			<!--可用计算属性-->
+			<span v-for="num in evenNumbers">{{num}},</span><br />
+			<!--也可用方法-->
+			<span v-for="num in even(numbers)">{{num}},</span><br />
+			<!--取整-->
+			<span v-for="i in 10">{{i}},</span><br />
+			<!--template分组，渲染多个元素-->
+			<template v-for="i in 5">
+				<input type="checkbox"/>
+				<span>{{i}}</span><br />
+			</template>
+			<!--v-for with v-if-->
+			<!--v-for 的优先级比 v-if 更高-->
+			<span v-for="i in 10" v-if="i % 2">{{i}}</span>
+		</div>
+		<script>
+			var app4 = new Vue({
+				el:'#app4',
+				data:{
+					numbers:[1,2,3,4,5,6,7,8,9,10]
+				},
+				computed:{
+					evenNumbers:function () {
+						return this.numbers.filter(function (num) {
+							return num % 2 === 0
+						})
+					}
+				},
+				methods:{
+					even:function (numbers) {
+						return numbers.filter(function (num) {
+							return num % 2 === 0
+						})
+					}
+				}
+			})
+		</script>
+		
+		<!--组件里的v-for-->
+		<div id="app5">
+			<!--prevent阻止默认行为-->
+			<form @submit.prevent="addNew">
+				<input type="text" v-model="newName" placeholder="输入新名字"/>
+				<button>添加</button>
+			</form>
+			<ul>
+				<!--
+					is="my-template"属性，这与 <my-template>相同；					
+					因为在<ul>元素内只有<li>元素会被看作有效内容，可避免浏览器解析错误；
+				-->
+				<!--2.2后key必须-->
+				<!--@remove自定义事件-->
+				<li 
+					is="my-template" 
+					v-for="(name,idx) in nameList" 
+					:key="idx" :name="name" 
+					@remove="nameList.splice(idx,1)"
+				></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			//$emit();1、父组件可以使用 props 把数据传给子组件2、子组件可以使用 $emit 触发父组件的自定义事件
+			Vue.component("my-template",{
+				props:['name'],
+				template:'<li>{{name}}<button @click="$emit(\'remove\')">删除</button></li>'
+			})
+			var app5 = new Vue({
+				el:'#app5',
+				data:{
+					newName:'',
+					nameList:['name1','name2','name3']
+				},
+				methods:{
+					addNew:function () {
+						this.nameList.push(this.newName);
+						this.newName = "";
+					}
+				}
+			})
+		</script>
 	</body>
 </html>
