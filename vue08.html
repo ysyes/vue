@@ -3,6 +3,23 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>事件处理</title>
+		<style type="text/css">
+			#app2 div{
+				width: 200px;
+				height: 50px;
+				margin-top: 20px;
+				background: #CCCCCC;				
+			}
+			#app2 a{
+				border: 1px solid #666;
+				background: #efefef;
+				cursor: pointer;
+			}
+			#app2 ul{
+				height: 200px;
+				overflow: auto;
+			}
+		</style>
 		<script type="text/javascript" src="lib/vue.js" ></script>
 	</head>
 	<body>
@@ -15,6 +32,8 @@
 			<!--内联处理器中的方法-->
 			<button @click="say('hi')">say hi</button>
 			<button @click="say('hello')">say hello</button>
+			<!--内联语句处理器中访问原始DOM事件,可以用特殊变量$event把它传入方法-->
+			<button @click="what('what?',$event)">what</button>
 		</div>
 		<script type="text/javascript">
 			var app1 = new Vue({
@@ -32,11 +51,129 @@
 					},
 					say:function (msg){
 						alert(msg)
+					},
+					what:function (msg,event){
+						if (event) {
+							event.preventDefault();
+							alert(msg);
+						}
 					}
 				}
 			})
 			//也可直接调用
 			//app1.hello();
+		</script>
+		
+		
+		
+		<!--事件修饰符-->
+		<div id="app2">
+			<!--.stop .prevent .capture .self .once .passive-->
+			
+			<!--只有自身触发才执行，即事件不是从内部元素触发的-->
+			<div @click.self="doThat">
+				<!--阻止单击事件继续传播-->
+				<a @click.stop="doThat">stop</a>				
+			</div>
+			<!--阻止默认行为-->
+			<form @submit.prevent="doThat">					
+				<input type="submit" value="prevent"/>
+			</form>
+			<!-- 修饰符可以串联 -->
+			<a @click.stop.prevent="doThat">串联</a>				
+			<!-- 只有修饰符 -->
+			<form v-on:submit.prevent>只有修饰符</form>
+			<!--事件捕获(冒泡反向)-->
+			<p @click.capture="doThat">事件捕获<br /><span @click="doThat">子元素</span></p>
+			<!--事件将只会触发一次 -->
+			<a @click.once="doThat">只能触发一次</a>
+			<!--不想阻止事件的默认行为,与prevent冲突，不可同时使用-->
+			<ul @scroll.passive="num++">
+				<li v-for="i in 20">{{i}}</li>
+			</ul>
+			<span>{{num}}</span>
+		</div>
+		<script type="text/javascript">
+			var app2 = new Vue({
+				el:'#app2',
+				data:{
+					num:0
+				},
+				methods:{
+					doThat:function (event){
+						alert(event.target.tagName);
+					}
+				}
+			})
+		</script>
+		
+		
+		<!--按键修饰符-->
+		<div id="app3">
+			<!--keycode为13时调用-->
+			<input type="text" @keyup.13="keycode" placeholder="回车"/>
+			<!--别名-->
+			<input type="text" @keyup.enter="keycode" placeholder="回车"/>
+			<input type="text" @keyup.tab="keycode" placeholder="tab键"/>
+			<input type="text" @keyup.delete="keycode" placeholder="删除和退格"/>
+			<input type="text" @keyup.esc="keycode" placeholder="esc"/>
+			<input type="text" @keyup.space="keycode" placeholder="空格"/>
+			<input type="text" @keyup.up="keycode" placeholder="上"/>
+			<input type="text" @keyup.down="keycode" placeholder="下"/>
+			<input type="text" @keyup.left="keycode" placeholder="左"/>
+			<input type="text" @keyup.right="keycode" placeholder="右"/>
+			<!--自定义-->
+			<input type="text" @keyup.f2="keycode" placeholder="F2"/>			
+			<!--自动匹配按键修饰符 event.key=='CapsLock'-->
+			<input type="text" @keyup.caps-lock="keycode" placeholder="CapsLock"/>
+		</div>
+		<script type="text/javascript">
+			/*可以通过全局 config.keyCodes 对象自定义按键修饰符别名：*/
+			//可以使用 `v-on:keyup.f2`
+			Vue.config.keyCodes.f2 = 113;
+			var app3 = new Vue({
+				el:'#app3',
+				data:{
+					
+				},
+				methods:{
+					keycode:function (event) {
+						console.log(event.keyCode);
+						console.log(event.key);
+					}
+				}
+			})
+		</script>
+		
+		<!--系统修饰键-->
+		<!--.ctrl .alt .shift .meta-->
+		<!--必须按下状态才会触发其他事件-->
+		<div id="app4">
+			<input type="text" @keyup.ctrl="keycode" placeholder="按下ctrl才会触发keyup"/><br />
+			<!--只要shift按着点击就触发，shif+ctrl点击也会触发-->
+			<button @click.shift="num++">按着shift点击{{num}}</button>
+			<!--.exact 精准控制修饰符-->
+			<button @click.shift.exact="num++">只按着shift点击{{num}}</button>
+			<!-- 没有任何系统修饰符被按下的时候才触发 -->
+			<button @click.exact="num++">没有任何系统修饰符被按下的时候才触发{{num}}</button>
+			
+			<!--鼠标按钮修饰符-->
+			<button @mouseup.left="num++">鼠标左键{{num}}</button>
+			<button @click.middle="num++">鼠标中键{{num}}</button>
+			<button @click.right.prevent="num++">鼠标右键{{num}}</button>
+		</div>
+		<script type="text/javascript">
+			var app4 = new Vue({
+				el:'#app4',
+				data:{
+					num:0
+				},
+				methods:{
+					keycode:function (event) {
+						console.log(event.keyCode);
+					}
+				}
+			})
 		</script>
 	</body>
 </html>
