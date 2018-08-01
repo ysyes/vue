@@ -184,7 +184,8 @@
 				<li 
 					is="my-template" 
 					v-for="(name,idx) in nameList" 
-					:key="idx" :name="name" 
+					:key="idx" 
+					:name="name" 
 					@remove="nameList.splice(idx,1)"
 				></li>
 			</ul>
