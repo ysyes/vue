@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单输入绑定</title>
+		<script type="text/javascript" src="lib/vue.js" ></script>
+	</head>
+	<body>
+		<div id="app1">
+			<!--v-model在<input>、<textarea>、<select>
+				会忽略所有表单元素的 value、checked、selected 特性的初始值,
+				使用Vue 实例的数据作为数据来源，在data中声明初始值。
+			-->
+			<!--文本-->
+			<input type="text" v-model="text1" value="123"/>
+			<p>1,{{text1}}</p>
+			<!--多行文本-->
+			<textarea v-model="text2">dhsaidasn</textarea>
+			<p style="white-space: pre-line;">2,{{text2}}</p>
+			<!--white-space
+				normal	默认。空白会被浏览器忽略。
+				pre	空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+				nowrap	文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+				pre-wrap	保留空白符序列，但是正常地进行换行。
+				pre-line	合并空白符序列，但是保留换行符。
+				inherit	规定应该从父元素继承 white-space 属性的值。
+			-->
+			
+			<!--复选框-->
+			<!--check初始化为非数组，返回布尔类型-->
+			<input type="checkbox" v-model="check"/>
+			<p>复选框:{{check}}</p>
+			
+			<!--多个复选框-->
+			<!--check1初始化为数组，返回选中value数组-->
+			<input type="checkbox" value="checked1" v-model="check1"/>
+			<input type="checkbox" value="checked2" v-model="check1"/>
+			<input type="checkbox" value="checked3" v-model="check1"/>
+			<input type="checkbox" value="checked4" v-model="check1"/>
+			<input type="checkbox" value="checked5" v-model="check1"/>
+			<p>多个复选框:{{check1}}</p>
+			
+			<!--单选框-->
+			<!--返回选中value，radios初始值可默认选中-->
+			<input type="radio" value="type1" v-model="radios" />
+			<input type="radio" value="type2" v-model="radios" />
+			<p>单选框:{{radios}}</p>
+			
+			<!--选择下拉框-->
+			<!--如果 v-model 表达式的初始值未能匹配任何选项，				
+				<select> 元素将被渲染为“未选中”状态。
+				在 iOS 中，这会使用户无法选择第一个选项。
+				因为这样的情况下，iOS 不会触发 change 事件。
+				因此，更推荐像下面这样提供一个值为空的禁用选项。
+			-->
+			<select v-model="selected">
+				<option value="" disabled="disabled">请选择</option>
+				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+			</select>
+			<p>下拉框:{{selected}}</p>
+			<!--下拉框多选-->
+			<select multiple="multiple" v-model="selecteds">
+				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+			</select>
+			<p>下拉多选{{selecteds}}</p>
+			
+			<select v-model="selected2">
+				<option v-for="year in list" :value="year">{{year}}</option>
+			</select>
+			<p>渲染的:{{selected2}}</p>
+		</div>
+		<script type="text/javascript">
+			var app1 = new Vue({
+				el:'#app1',
+				data:{
+					text1:'初始值',
+					text2:'',
+					check:'',
+					check1:[],
+					radios:'type2',
+					selected:'',
+					selecteds:[],
+					selected2:'2018',
+					list:[2014,2015,2016,2017,2018,2019]
+				}
+			})
+		</script>
+	</body>
+</html>
