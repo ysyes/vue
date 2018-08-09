@@ -139,12 +139,15 @@
 			<input type="text" :value="text2" @input="text2=$event.target.value"/>{{text2}}<br />
 			
 			<!--用在组件上-->
-			<input-component :value="value" @big="value=$event"></input-component>{{value}}
+			<input-component :value="value" @big="value=$event"></input-component>
 		</div>
 		<script type="text/javascript">
 			Vue.component("input-component",{
 				props:['value'],
-				template:`<input :value="value" @input="$emit('big',$event.target.value)" />`
+				template:`<div>
+						<input :value="value" @input="$emit('big',$event.target.value)" />
+						{{value}}
+					</div>`
 			})
 			var app5 = new Vue({
 				el:"#app5",
@@ -170,38 +173,86 @@
 		</script>
 		
 		<!--动态组件-->
+		<!--第一种写法-->
+		<style type="text/css">
+			.checked{
+				background: #666666;
+				color: white;
+				outline: none;
+			}
+		</style>
 		<div id="app7">
-			<button-title v-for="post in title" :post="post" :key="post.id" @click="alert"></button-title>
+			<button v-for="post in title" :key="post" @click="tem=post" :class="{checked:tem===post}">{{post}}</button>
+			<component :is="templateName"></component>
 		</div>
 		<script type="text/javascript">
-			Vue.component('button-title',{
-				props:['post'],
-				template:`<button @click="$emit('click',post.id)">{{post.name}}</button>`
+			Vue.component('h-home',{
+				template:'<h1>main1</h1>'
+			})
+			Vue.component('h-league',{
+				template:'<h1>main2</h1>'
+			})
+			Vue.component('h-team',{
+				template:'<h1>main3</h1>'
 			})
 			var app7 = new Vue({
 				el:"#app7",
 				data:{
-					title:[
-						{
-							name:"Home",
-							id:1
-						},
-						{
-							name:"league",
-							id:2
-						},
-						{
-							name:"team",
-							id:3
-						}						
-					]
+					title:['Home','League','Team'],
+					tem:'Home'
 				},
-				methods:{
-					alert:function (id){
-						console.log(id)
+				computed:{
+					templateName:function () {
+						return 'h-' + this.tem.toLowerCase();
 					}
 				}
 			})
 		</script>
+		<!--第二种写法-->
+		<div id="app8">
+			<button v-for="post in list" :key="post.name" @click="tem=post" :class="{checked:tem===post}">{{post.name}}</button>
+			<component :is='tem.component'></component>
+		</div>
+		<script type="text/javascript">
+			var app8 = new Vue({
+				el:"#app8",
+				data:{
+					list:[
+						{
+							name:'Home',
+							component:{
+								template:'<h1>main1</h1>'
+							}
+						},{
+							name:'League',
+							component:{
+								template:'<h1>main2</h1>'
+							}
+						},{
+							name:'Team',
+							component:{
+								template:'<h1>main3</h1>'
+							}
+						}
+					],
+					tem:''
+				},
+				created:function(){
+					this.tem = this.list[0]
+				}
+			})
+		</script>
+		
+		<!--解析 DOM 模板时的注意事项-->
+		<!--<ul>、<ol>、<table> 和 <select>内部有严格限制-->
+		<!--
+			<table>
+				<blog-post-row></blog-post-row>
+			</table>
+			改为
+			<table>
+				<tr is="blog-post-row"></tr>
+			</table>
+		-->
 	</body>
 </html>
