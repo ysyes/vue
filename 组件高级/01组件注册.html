@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>组件注册</title>
+		<script type="text/javascript" src="../lib/vue.js" ></script>
+	</head>
+	<body>
+		<div id="app1">
+			<header-logo></header-logo>
+		</div>
+		<div id="app2">
+			<header-logo></header-logo>
+			<my-component></my-component>
+			<header-title></header-title>
+		</div>
+		<script type="text/javascript">
+			/*全局注册*/
+			/*命名：全小写加-*/
+			Vue.component('header-logo',{
+				template:'<h3>模板</h3>'
+			})
+			/*驼峰法，DOM中需要小写加-*/
+			Vue.component('MyComponent',{
+				template:'<h2>模板2</h2>'
+			})
+			var app1 = new Vue({
+				el:"#app1"
+			})
+			var app2 = new Vue( {
+				el:"#app2",
+				/*局部注册*/
+				components:{
+					'header-title':{
+						template:'<h3>局部注册组件</h3>'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
