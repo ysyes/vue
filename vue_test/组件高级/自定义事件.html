@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义事件</title>
+		<script type="text/javascript" src="../lib/vue.js" ></script>
+	</head>
+	<body>
+		<div id="app1">
+			<my-component v-for="post in list" :post="post" :key="post.name" @add-age="post.age++"></my-component>
+		</div>
+		<script type="text/javascript">
+			Vue.component('my-component',{
+				props:['post'],
+				template:'<p>姓名：<span>{{post.name}}</span> 年龄：<span>{{post.age}}</span><button @click="$emit(\'add-age\')">+1</button></p>'
+			})
+			var app1 = new Vue({
+				el:'#app1',
+				data:{
+					list:[
+						{name:'name1',age:1},
+						{name:'name2',age:2},
+						{name:'name3',age:3},
+					]
+				}
+			})
+		</script>
+	</body>
+</html>

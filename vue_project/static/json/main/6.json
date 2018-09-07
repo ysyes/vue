@@ -1,0 +1,116 @@
+{
+	"name": "天安",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 0,
+					"show": "2009年2月正式运营，耗资1275亿韩币，建筑面积约5,714.38㎡，位于忠清南道天安市西北区星井洞。周围安静舒适，空气清新，环境优美，在加上完美的配套设施与低廉的价格，是韩国U12~U21球队的热门拉练地点。",
+					"imgs": [
+						"static/img/main/6/1_1.jpeg",
+						"static/img/main/6/1_2.png",
+						"static/img/main/6/1_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 0,
+					"show": "房间外观简约，入住舒适，安全干净。客房内有平面卫星电视和冰箱；吹风机和洗浴用品可免费使用。",
+					"imgs": [
+						"static/img/main/6/2_1.jpeg",
+						"static/img/main/6/2_2.jpeg",
+						"static/img/main/6/2_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 0,
+					"show": "基地营养师有多年给球员做料理的经验，非常了解U12岁~U21岁需要补充的营养和饮食特点。也可按照球队的要求加改菜品。",
+					"imgs": [
+						"static/img/main/6/3_1.jpeg",
+						"static/img/main/6/3_2.jpeg",
+						"static/img/main/6/3_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 0,
+					"show": "均设有优质设施，小会议室，多媒体间，洗衣间，制冰机。",
+					"imgs": [
+						"static/img/main/6/4_1.jpeg",
+						"static/img/main/6/4_2.jpeg",
+						"static/img/main/6/4_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 5,
+			"title": "球场",
+			"mains": [
+				{
+					"star": 0,
+					"show": "三块天然草坪（116m×79m），三块人造草（116m×79m）。每天有专业的草坪管理员打理，草坪质量非常良好。",
+					"imgs": [
+						"static/img/main/6/5_1.jpeg",
+						"static/img/main/6/5_2.jpeg",
+						"static/img/main/6/5_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "有21种健身器材，宽敞的健身环境，可帮助球员进行力量训练。",
+					"imgs": [
+						"static/img/main/6/6_1.jpeg",
+						"static/img/main/6/6_2.jpeg",
+						"static/img/main/6/6_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 7,
+			"title": "大巴",
+			"mains": [
+				{
+					"star": 0,
+					"show": "座位舒适，空间大，安全可靠。可载35人~50人，司机拥有多年的开车经历。",
+					"imgs": [
+						"static/img/main/6/7_1.png",
+						"static/img/main/6/7_2.jpg",
+						"static/img/main/6/7_3.png"
+					]
+				}
+			]
+		},{
+			"id": 8,
+			"title": "比赛对手",
+			"mains": [
+				{
+					"star": 0,
+					"show": [
+						"",
+						"根据具体拉练时间来确定相应对手<br/>● 初中：天安初中、天安成巨初中、天安新安初中、光德初中、天安南山初中等<br/>● 高中：秉天高中、北日高中、清秀高中、盛焕高中、天安高中等<br/>● 大学：檀国大学、相名大学、白锡大学、宣门大学等"
+					]
+				}
+			]
+		}
+	]
+}

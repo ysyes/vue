@@ -1,0 +1,116 @@
+{
+	"name": "统营",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 0,
+					"show": "酒店位于统营市，距离巨济风景区有19公里，距离南海有48公里，干净整洁的舒适客房定让您满意。",
+					"imgs": [
+						"static/img/main/7/1_1.png",
+						"static/img/main/7/1_2.png",
+						"static/img/main/7/1_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 0,
+					"show": "客房内的所有设施都是经过精心的考虑和安排，空调在满足您入住需求的同时又能增添家的温馨感。浴室配有拖鞋、浴缸和吹风机。",
+					"imgs": [
+						"static/img/main/7/2_1.png",
+						"static/img/main/7/2_2.png",
+						"static/img/main/7/2_3.png"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 0,
+					"show": "供应地道的韩国料理和各种国际美食。",
+					"imgs": [
+						"static/img/main/7/3_1.png",
+						"static/img/main/7/3_2.png",
+						"static/img/main/7/3_3.png"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 0,
+					"show": "酒店提供的室外游泳池对于那些想要健身的旅客来说是一个好去处。酒店配置有会议厅，定能满足您商务活动方面的需求。",
+					"imgs": [
+						"static/img/main/7/4_1.jpeg",
+						"static/img/main/7/4_2.jpeg",
+						"static/img/main/7/4_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 5,
+			"title": "球场",
+			"mains": [
+				{
+					"star": 0,
+					"show": "多个人造草、天然草供球队去使用，草皮在平整度、耐践踏等方面均达到了很高的标准，场地周边的气候宜人，环境舒适，是球队训练比赛理想的选择。",
+					"imgs": [
+						"static/img/main/7/5_1.jpeg",
+						"static/img/main/7/5_2.jpeg",
+						"static/img/main/7/5_3.png"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "娱乐化的健身设施，智能化的健身系统，便利化的健身体验，为追求快乐便利健身体验的时尚人群提供完美解决方案。",
+					"imgs": [
+						"static/img/main/7/6_1.jpeg",
+						"static/img/main/7/6_2.jpeg",
+						"static/img/main/7/6_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 7,
+			"title": "大巴",
+			"mains": [
+				{
+					"star": 0,
+					"show": "宽敞、舒适、安全，可容纳50多人的座位，足够保证您的出行之旅。",
+					"imgs": [
+						"static/img/main/7/7_1.png",
+						"static/img/main/7/7_2.jpg",
+						"static/img/main/7/7_3.png"
+					]
+				}
+			]
+		}, {
+			"id": 8,
+			"title": "比赛对手",
+			"mains": [
+				{
+					"star": 0,
+					"show": [
+						"根据具体拉练时间来确定相应对手<br/>● K2联赛-大田市民等球队 <br/>● K3联赛-庆州市民、釜山Fc等球队 <br/>● 大学球队-庆南科技大学、嶺南大学、金川大学、大邱大学、昌原大学等20个韩国大学专业球队",
+						"根据具体拉练时间来确定相应对手<br/>● 高中-巨濟高中，昌宁高中，铁成高中等30个韩国高中专业球队 <br/>● 初中-梁山初中，镇海初中，密阳初中，南海初中，密城初中等20个初中专业球队 "
+					]
+				}
+			]
+		}
+	]
+}

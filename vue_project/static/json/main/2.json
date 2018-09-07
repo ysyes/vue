@@ -1,0 +1,76 @@
+{
+	"name": "迪拜",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 5,
+					"show": "酒店坐落在卓美亚海滩，在迪拜占尽地理之宜，距离达姆巴亚克罗机场，仅有2km距离。坐拥 65 英亩的葱郁花园和绵延一公里的私人海滩，环境精致奢华，带您享受静谧生活。",
+					"imgs": [
+						"static/img/main/2/1_1.jpg",
+						"static/img/main/2/1_2.jpg",
+						"static/img/main/2/1_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 5,
+					"show": "内奢华美的生活空间，以及可远眺阿拉伯湾美景的阳台，足以让客人在放松之余享受酒店带来的安静与美好，同时酒店还配有服务周到的管家团队满足客人所需。",
+					"imgs": [
+						"static/img/main/2/2_1.jpg",
+						"static/img/main/2/2_2.jpg",
+						"static/img/main/2/2_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 5,
+					"show": "踏上美食发现之旅，充分领略近东等地的美食。高级豪华酒店餐厅丰富多彩的印欧式餐饮提供具有亚洲风味的现代美食。无论是豪华还是休闲，无论是大型活动还是私密聚会，酒店都可提供风格迥异的餐饮体验。",
+					"imgs": [
+						"static/img/main/2/3_1.jpg",
+						"static/img/main/2/3_2.jpg",
+						"static/img/main/2/3_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 5,
+					"show": "水疗中心、游泳池、会客厅，以及各种休闲娱乐设施，从纯粹的放松到独特的健康之旅等应有尽有。将每位客人视为独立的个体，旨在提供各种体验，让您的身心得到放松、恢复和提升。",
+					"imgs": [
+						"static/img/main/2/4_1.jpg",
+						"static/img/main/2/4_2.jpg",
+						"static/img/main/2/4_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "功能齐全，可以提供Technogym心肺功能和阻力训练、Kinesis系统、Flexability、Power Plate、BOSU等训练。",
+					"imgs": [
+						"static/img/main/2/6_1.jpg",
+						"static/img/main/2/6_2.jpg",
+						"static/img/main/2/6_3.jpg"
+					]
+				}
+			]
+		}
+	]
+}

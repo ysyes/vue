@@ -1,0 +1,150 @@
+{
+	"name": "冲绳",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 5,
+					"show": "酒店地理位置优异，不仅在享受训练和比赛便捷之余，又能感受冲绳当地的文化。而酒店外就是碧海金沙，完全能给您带来一次不一样的体验。",
+					"imgs": [
+						"static/img/main/4/1_1.jpg",
+						"static/img/main/4/1_2.jpg",
+						"static/img/main/4/1_3.jpg"
+					]
+				},
+				{
+					"star": 4,
+					"show": "风景优美，设施齐全，服务周到，承接过多个职业俱乐部，并自带室外泳池和室内人工温泉。同时酒店距离冲绳那霸机场非距离较近，方便快捷，是冬训非常理想的选择之一。",
+					"imgs": [
+						"static/img/main/4/1_4.jpg",
+						"static/img/main/4/1_5.jpg",
+						"static/img/main/4/1_6.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 5,
+					"show": "房间干净、明亮，非常舒适。夜晚海风拥您入睡，仿佛一下子能够拥有了所有的美好，享受家一般的温暖，消除一天的疲惫。",
+					"imgs": [
+						"static/img/main/4/2_1.jpg",
+						"static/img/main/4/2_2.jpg",
+						"static/img/main/4/2_3.jpg"
+					]
+				},
+				{
+					"star": 4,
+					"show": "舒适安静的房间，让您在疲惫之余能够得到充分的休息。而推窗即见海的场景，又能让您在生活之余感受来自于大自然的馈赠，风景秀丽，足以让人心旷人怡。",
+					"imgs": [
+						"static/img/main/4/2_4.png",
+						"static/img/main/4/2_5.jpg",
+						"static/img/main/4/2_6.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 5,
+					"show": "服务过多个职业球队，对于运动员每日饮食菜谱的订制有着自己丰富的经验，酒店菜品种类丰富且均富有营养，能够给您味觉上带来不一样的感受。",
+					"imgs": [
+						"static/img/main/4/3_1.jpg",
+						"static/img/main/4/3_2.jpg",
+						"static/img/main/4/3_3.jpg"
+					]
+				},{
+					"star": 4,
+					"show": "不论是早餐、午餐还是晚餐，均丰富、营养、合理，同时专门为运动员配有独自的菜谱，也可以根据客户的要求自行订制，满足各种所需。",
+					"imgs": [
+						"static/img/main/4/3_4.png",
+						"static/img/main/4/3_5.jpg",
+						"static/img/main/4/3_6.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 5,
+					"show": "沙滩、泳池、酒吧、以及各种公共设施，可以带给您一流的体验，。24小时开放的前台服务可为您随时提供信息，以帮助您探索这个魅力之都。",
+					"imgs": [
+						"static/img/main/4/4_1.jpg",
+						"static/img/main/4/4_2.png",
+						"static/img/main/4/4_3.jpg"
+					]
+				},{
+					"star": 4,
+					"show": "相信酒店周到的服务和一流的设施，会让您拥有别样的体验。同时酒店会配置有会议厅，定能满足您商务活动方面的需求。24小时开放的前台服务可为您随时提供信息，以帮助您探索这个魅力之都。",
+					"imgs": [
+						"static/img/main/4/4_4.jpg",
+						"static/img/main/4/4_5.jpg",
+						"static/img/main/4/4_6.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 5,
+			"title": "球场",
+			"mains": [
+				{
+					"star": 0,
+					"show": "多个人造草、天然草供球队去使用，草皮在平整度、耐践踏等方面均达到了很高的标准，场地周边的气候宜人，环境舒适，是球队训练比赛理想的选择。",
+					"imgs": [
+						"static/img/main/4/5_1.png",
+						"static/img/main/4/5_2.jpg",
+						"static/img/main/4/5_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "健身房距离酒店较近，拥有各种训练器材，充分保证力量训练有条不紊进行。",
+					"imgs": [
+						"static/img/main/4/6_1.jpg",
+						"static/img/main/4/6_2.jpg",
+						"static/img/main/4/6_3.png"
+					]
+				}
+			]
+		}, {
+			"id": 7,
+			"title": "大巴",
+			"mains": [
+				{
+					"star": 0,
+					"show": "宽敞、舒适、安全，可容纳50多人的座位，足够保证您的出行之旅。",
+					"imgs": [
+						"static/img/main/4/7_1.jpg",
+						"static/img/main/4/7_2.jpg",
+						"static/img/main/4/7_3.jpg"
+					]
+				}
+			]
+		},{
+			"id": 8,
+			"title": "比赛对手",
+			"mains": [
+				{
+					"star": 0,
+					"show": [
+						"根据具体拉练时间来确定相应对手<br/>● J1联赛：浦和红钻、长崎成功丸、仙台维加泰、鸟栖砂岩、FC东京、大阪钢巴、川崎前锋、神户胜利船、横滨水手等 <br/>● J2联赛：东京绿茵、水户蜀葵、赞歧釜玉、市原千叶等球队 <br/>● J3联赛：FC琉球、富山胜利、群马草津温泉、盛冈仙鹤等球队",
+						""
+					]
+				}
+			]
+		}
+	]
+}

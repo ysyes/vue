@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单输入绑定</title>
+		<script type="text/javascript" src="lib/vue.js" ></script>
+	</head>
+	<body>
+		<div id="app1">
+			<!--v-model在<input>、<textarea>、<select>
+				会忽略所有表单元素的 value、checked、selected 特性的初始值,
+				使用Vue 实例的数据作为数据来源，在data中声明初始值。
+			-->
+			<!--文本-->
+			<input type="text" v-model="text1" value="123"/>
+			<p>1,{{text1}}</p>
+			<!--多行文本-->
+			<textarea v-model="text2">dhsaidasn</textarea>
+			<p style="white-space: pre-line;">2,{{text2}}</p>
+			<!--white-space
+				normal	默认。空白会被浏览器忽略。
+				pre	空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+				nowrap	文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+				pre-wrap	保留空白符序列，但是正常地进行换行。
+				pre-line	合并空白符序列，但是保留换行符。
+				inherit	规定应该从父元素继承 white-space 属性的值。
+			-->
+			
+			<!--复选框-->
+			<!--check初始化为非数组，返回布尔类型-->
+			<input type="checkbox" v-model="check"/>
+			<p>复选框:{{check}}</p>
+			
+			<!--多个复选框-->
+			<!--check1初始化为数组，返回选中value数组-->
+			<input type="checkbox" value="checked1" v-model="check1"/>
+			<input type="checkbox" value="checked2" v-model="check1"/>
+			<input type="checkbox" value="checked3" v-model="check1"/>
+			<input type="checkbox" value="checked4" v-model="check1"/>
+			<input type="checkbox" value="checked5" v-model="check1"/>
+			<p>多个复选框:{{check1}}</p>
+			
+			<!--单选框-->
+			<!--返回选中value，radios初始值可默认选中-->
+			<input type="radio" value="type1" v-model="radios" />
+			<input type="radio" value="type2" v-model="radios" />
+			<p>单选框:{{radios}}</p>
+			
+			<!--选择下拉框-->
+			<!--如果 v-model 表达式的初始值未能匹配任何选项，				
+				<select> 元素将被渲染为“未选中”状态。
+				在 iOS 中，这会使用户无法选择第一个选项。
+				因为这样的情况下，iOS 不会触发 change 事件。
+				因此，更推荐像下面这样提供一个值为空的禁用选项。
+			-->
+			<select v-model="selected">
+				<option value="" disabled="disabled">请选择</option>
+				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+			</select>
+			<p>下拉框:{{selected}}</p>
+			<!--下拉框多选-->
+			<select multiple="multiple" v-model="selecteds">
+				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+			</select>
+			<p>下拉多选{{selecteds}}</p>
+			
+			<select v-model="selected2">
+				<option v-for="year in list" :value="year">{{year}}</option>
+			</select>
+			<p>渲染的:{{selected2}}</p>
+		</div>
+		<script type="text/javascript">
+			var app1 = new Vue({
+				el:'#app1',
+				data:{
+					text1:'初始值',
+					text2:'',
+					check:'',
+					check1:[],
+					radios:'type2',
+					selected:'',
+					selecteds:[],
+					selected2:'2018',
+					list:[2014,2015,2016,2017,2018,2019]
+				}
+			})
+		</script>
+		
+		
+		<!--值绑定-->
+		<div id="app2">
+			<!--对于单选按钮，复选框及选择框的选项，v-model绑定的值通常是静态字符串 (对于复选框也可以是布尔值)-->
+			
+			<!--选中时，checked为字符串a-->
+			<input type="radio" value="a" v-model="checked" />
+			{{checked}}<br />
+			<!--toggle为true或false-->
+			<input type="checkbox" value="b"  v-model="toggle"/>
+			{{toggle}}<br />
+			<!--选中第一项是，selected为 c-->
+			<select v-model="selected">
+				<option value="c">c</option>
+			</select>
+			{{selected}}<br />
+			
+			<!--可以把值绑定到 Vue实例的一个动态属性上，这时可以用 v-bind 实现，并且这个属性的值可以不是字符串。-->
+			<!--选中时:toggle1==='选中'；未选中时:toggle1==='未选中'-->
+			<input id="inputed" type="checkbox" true-value="选中" false-value="未选中" v-model="toggle1" />
+			{{toggle1}}<br />
+			
+			<!--选中时pick===app2.a===111-->
+			<input type="radio" :value="a" v-model="pick"/>
+			{{pick}}<br />
+			
+			<!--选中时selected1为object-->
+			<select v-model="selected1">
+				<option :value="{number:1}">1</option>
+				<option :value="{number:2}">2</option>
+			</select>
+			{{selected1.number}}
+		</div>
+		<script type="text/javascript">
+			var app2 = new Vue({
+				el:'#app2',
+				data:{
+					checked:'',
+					toggle:'',
+					selected:'',
+					toggle1:'',
+					a:111,
+					pick:'',
+					selected1:''
+				}
+			})
+		</script>
+		
+		<!--修饰符-->
+		<div id="app3">
+			<!--
+				lazy转变为使用 change 事件进行同步。
+				此处改变并失去焦点触发，
+				app3.main改变时，不会触发value改变
+			-->
+			<input type="text" value="" v-model.lazy="main"/>
+			{{main}}<br />
+			
+			<!--number转换为数值类型-->
+			<select v-model.number="selected">
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+			</select>
+			{{selected +' is '+typeof(selected)}}<br />
+			
+			<!--trim自动过滤首尾空白字符-->
+			<input type="text" value="" v-model.trim="msg"/>
+			{{msg}}<br />
+		</div>
+		<script type="text/javascript">
+			var app3 = new Vue({
+				el:'#app3',
+				data:{
+					main:'',
+					selected:'',
+					msg:'    过滤首尾空白字符'
+				}
+			})
+		</script>
+	</body>
+</html>

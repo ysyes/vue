@@ -1,0 +1,116 @@
+{
+	"name": "昌原",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 0,
+					"show": "坐拥优越的地理位置，周围交通十分方便。现代化的宿舍均经过精心设计，提供无线网络连接，助您随时与外界保持高效沟通，在加上优美的风景低廉的价格，是韩国U12~U21球队的热门拉练地点。",
+					"imgs": [
+						"static/img/main/9/1_1.png",
+						"static/img/main/9/1_2.jpg",
+						"static/img/main/9/1_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 0,
+					"show": "房间外观简约，入住舒适。客房有平面卫星电视和小冰箱；吹风机和免费洗浴用品。两人间内配有一个沙发组，为您提供更为舒适的休息空间。",
+					"imgs": [
+						"static/img/main/9/2_1.png",
+						"static/img/main/9/2_2.png",
+						"static/img/main/9/2_3.png"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 0,
+					"show": "专业的食品营养师为您提供最健康，最卫生，最有品味的料理。可自由安排饮食时间。",
+					"imgs": [
+						"static/img/main/9/3_1.jpeg",
+						"static/img/main/9/3_2.jpeg",
+						"static/img/main/9/3_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 0,
+					"show": "均设有优质设施，如小会议室，多媒体间，洗衣间，制冰机。",
+					"imgs": [
+						"static/img/main/9/4_1.jpeg",
+						"static/img/main/9/4_2.jpeg",
+						"static/img/main/9/4_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 5,
+			"title": "球场",
+			"mains": [
+				{
+					"star": 0,
+					"show": "两块7,140㎡的天然草，三块人造草，一块圆顶球场，一块五人制球场。多种专业球场提供给球队使用。球场里设有洗浴间和更衣室，让球员训练更加有效率。",
+					"imgs": [
+						"static/img/main/9/5_1.jpeg",
+						"static/img/main/9/5_2.jpg",
+						"static/img/main/9/5_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "基地里364㎡规模的健身房足可提供球员进行力量训练。",
+					"imgs": [
+						"static/img/main/9/6_1.jpeg",
+						"static/img/main/9/6_2.jpeg",
+						"static/img/main/9/6_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 7,
+			"title": "大巴",
+			"mains": [
+				{
+					"star": 0,
+					"show": "座位舒适，空间大，安全可靠。可载35人~50人，司机拥有多年的开车经历。",
+					"imgs": [
+						"static/img/main/9/7_1.jpeg",
+						"static/img/main/9/7_2.png",
+						"static/img/main/9/7_3.jpeg"
+					]
+				}
+			]
+		},{
+			"id": 8,
+			"title": "比赛对手",
+			"mains": [
+				{
+					"star": 0,
+					"show": [
+						"",
+						"根据具体拉练时间来确定相应对手<br/>● 初中：东部初中，长北初中，昌原初中，贤东初中，佳阳初中，马山初中，黄山初中<br/>● 高中：梵宇高中，海城高中，真州高中，庆尚高中，九山高中，世宗高中，崇武高中<br/>● 大学：庆尚大学，庆南大学，昌原大学，釜山大学"
+					]
+				}
+			]
+		}
+	]
+}

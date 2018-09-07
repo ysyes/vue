@@ -1,0 +1,77 @@
+{
+	"name": "阿布扎比",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 5,
+					"show": "雅致的客房将现代时尚风格与阿联酋文化特色完美结合，让您体验到低调奢华和高雅上乘的服务，营造出低调奢华的氛围。",
+					"imgs": [
+						"static/img/main/3/1_1.jpg",
+						"static/img/main/3/1_2.jpg",
+						"static/img/main/3/1_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 5,
+					"show": "客房提供精心布置的私人阳台，可供客人放松舒展，观赏阿拉伯海、萨蒂亚特色海滩及度假村情有游泳池的迷人景观。",
+					"imgs": [
+						"static/img/main/3/2_1.jpg",
+						"static/img/main/3/2_2.jpg",
+						"static/img/main/3/2_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 5,
+					"show": "从东方到西方，从经典美食到创新美食，想吃什么都可以在这里找到。精制沙拉、全球海鲜、现煎牛扒等等，同时配有各式各样的运动员菜谱供客人选择。",
+					"imgs": [
+						"static/img/main/3/3_1.jpg",
+						"static/img/main/3/3_2.jpg",
+						"static/img/main/3/3_3.jpg",
+						"static/img/main/3/3_4.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 5,
+					"show": "优雅的休闲吧，专业的水疗中心以及25米室外标准游泳池和专用伸展活动室供客人随意放松。",
+					"imgs": [
+						"static/img/main/3/4_1.jpg",
+						"static/img/main/3/4_2.jpg",
+						"static/img/main/3/4_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "先进的健身器械，宽敞操厅，为你营造出一个完美的健身空间。",
+					"imgs": [
+						"static/img/main/3/6_1.jpg",
+						"static/img/main/3/6_2.jpg",
+						"static/img/main/3/6_3.jpg"
+					]
+				}
+			]
+		}
+	]
+}

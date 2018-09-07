@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>组件基础</title>
+		<script type="text/javascript" src="lib/vue.js" ></script>
+	</head>
+	<body>
+		<div id="app1">
+			<!--注意当点击按钮时，每个组件都会各自独立维护它的 count。因为你每用一次组件，就会有一个它的新实例被创建。-->
+			<button-click></button-click>
+			<button-click></button-click>
+			<button-click></button-click>
+		</div>
+		<script type="text/javascript">
+			/*	
+				因为组件是可复用的Vue实例所以它们与 new Vue 接收相同的选项，
+				例如 data、computed、watch、methods 以及生命周期钩子等。
+				仅有的例外是像 el 这样根实例特有的选项
+			*/
+			Vue.component('button-click',{
+				/*一个组件的data必须是一个函数*/
+				data:function (){
+					return{
+						num:0
+					}
+				},
+				template:'<button @click="num++">点击了{{num}}下</button>'
+			})
+			new Vue({
+				el:'#app1'
+			})
+		</script>
+		
+		<!--组件的组织-->
+		<!--全局注册和局部注册-->
+		
+		<!--通过prop向子组件传递数据-->
+		<div id="app2">
+			<title-name title="武磊"></title-name>
+			<name-list v-for="(i,idx) in list" :data="i" :key="idx"></name-list>
+		</div>
+		<script type="text/javascript">
+			/*component命名尽量小写，-分开*/
+			Vue.component('title-name',{
+				props:['title'],
+				template:'<h3>{{title}}</h3>'
+			})
+			Vue.component('name-list',{
+				props:['data'],
+				template:'<p>姓名:<span>{{data.name}}</span>&nbsp;&nbsp;年龄:<span>{{data.age}}</span></p>'
+			})
+			new Vue({
+				el:'#app2',
+				data:{
+					list:[
+						{
+							name:"name1",
+							age:1
+						},{
+							name:"name2",
+							age:2
+						},{
+							name:"name3",
+							age:3
+						}
+					]
+				}
+			})
+		</script>
+		
+		
+		<!--单个根元素-->
+		<div id="app3">
+			<my-component title="标题" main="内容"></my-component>
+			<my-component title="标题" main="内容" time="2018年8月7日16:27:51"></my-component>
+		</div>
+		<script type="text/javascript">
+			Vue.component('my-component',{
+				props:['title','main','time'],
+				/*错误写法:<h3>{{title}}</h3><p>{{main}}</p>*/
+				/*每个组件必须只有一个根元素,将模板的内容包裹在一个父元素内*/
+				template:'<div><h3>{{title}}</h3><p>{{main}}</p><span>{{time}}</span></div>'
+			})
+			new Vue({
+				el:'#app3'
+			})
+		</script>
+		
+		
+		<ul id="app4">
+			<!--通过事件向父级组件发送消息-->
+			<li is="app4" :style="{fontSize:fontSize+'px'}" v-for="(post,idx) in list" :post="post" :key="idx" @big="fontSize++"></li>
+			<!--使用事件抛出一个值-->
+			<li is="app4-1" :style="{fontSize:fontSize+'px'}" v-for="(post,idx) in list" :post="post" :key="idx+3" @big="scale"></li>
+			<li>字号：{{fontSize}}</li>
+		</ul>
+		<script type="text/javascript">
+			Vue.component('app4',{
+				props:['post'],
+				template:`<li>
+							<span>{{post.title}}</span>
+							<span>{{post.main}}</span>
+							<button @click="$emit('big')">放大字号</button>
+						</li>`
+			})
+			
+			/*$emit 的第二个参数抛出，scale方法接收*/
+			Vue.component('app4-1',{
+				props:['post'],
+				template:`<li>
+							<span>{{post.title}}</span>
+							<span>{{post.main}}</span>
+							<button @click="$emit('big',post.scale)">放大{{post.scale}}</button>
+						</li>`
+			})
+			new Vue({
+				el:"#app4",
+				data:{
+					list:[
+						{title:"标题1",main:"内容1",scale:1},
+						{title:"标题2",main:"内容2",scale:2},
+						{title:"标题3",main:"内容3",scale:3}
+					],
+					fontSize:12
+				},
+				methods:{
+					scale:function (scale){
+						this.fontSize += scale;
+					}
+				}
+			})
+		</script>
+		
+		<!--组件上使用model-->
+		<div id="app5">
+			<input type="text" v-model="text1"/>{{text1}}<br />
+			<!--等价于：-->
+			<input type="text" :value="text2" @input="text2=$event.target.value"/>{{text2}}<br />
+			
+			<!--用在组件上-->
+			<input-component :value="value" @big="value=$event"></input-component>
+		</div>
+		<script type="text/javascript">
+			Vue.component("input-component",{
+				props:['value'],
+				template:`<div>
+						<input :value="value" @input="$emit('big',$event.target.value)" />
+						{{value}}
+					</div>`
+			})
+			var app5 = new Vue({
+				el:"#app5",
+				data:{
+					text1:"111",
+					text2:"222",
+					value:"333"
+				}
+			})
+		</script>
+		
+		<!--插槽<slot></slot>-->
+		<div id="app6">
+			<alert>插槽内容</alert>
+			<alert>错误</alert>
+		</div>
+		<script type="text/javascript">
+			Vue.component('alert',{
+				template:'<div><strong>Error</strong><slot></slot></div>'
+			})
+			var app6 = new Vue({
+				el:"#app6"
+			})
+		</script>
+		
+		<!--动态组件-->
+		<!--第一种写法-->
+		<style type="text/css">
+			.checked{
+				background: #666666;
+				color: white;
+				outline: none;
+			}
+		</style>
+		<div id="app7">
+			<button v-for="post in title" :key="post" @click="tem=post" :class="{checked:tem===post}">{{post}}</button>
+			<component :is="templateName"></component>
+		</div>
+		<script type="text/javascript">
+			Vue.component('h-home',{
+				template:'<h1>main1</h1>'
+			})
+			Vue.component('h-league',{
+				template:'<h1>main2</h1>'
+			})
+			Vue.component('h-team',{
+				template:'<h1>main3</h1>'
+			})
+			var app7 = new Vue({
+				el:"#app7",
+				data:{
+					title:['Home','League','Team'],
+					tem:'Home'
+				},
+				computed:{
+					templateName:function () {
+						return 'h-' + this.tem.toLowerCase();
+					}
+				}
+			})
+		</script>
+		<!--第二种写法-->
+		<div id="app8">
+			<button v-for="post in list" :key="post.name" @click="tem=post" :class="{checked:tem===post}">{{post.name}}</button>
+			<component :is='tem.component'></component>
+		</div>
+		<script type="text/javascript">
+			var app8 = new Vue({
+				el:"#app8",
+				data:{
+					list:[
+						{
+							name:'Home',
+							component:{
+								template:'<h1>main1</h1>'
+							}
+						},{
+							name:'League',
+							component:{
+								template:'<h1>main2</h1>'
+							}
+						},{
+							name:'Team',
+							component:{
+								template:'<h1>main3</h1>'
+							}
+						}
+					],
+					tem:''
+				},
+				created:function(){
+					this.tem = this.list[0]
+				}
+			})
+		</script>
+		
+		<!--解析 DOM 模板时的注意事项-->
+		<!--<ul>、<ol>、<table> 和 <select>内部有严格限制-->
+		<!--
+			<table>
+				<blog-post-row></blog-post-row>
+			</table>
+			改为
+			<table>
+				<tr is="blog-post-row"></tr>
+			</table>
+		-->
+	</body>
+</html>

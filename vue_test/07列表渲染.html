@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>列表渲染</title>
+		<script type="text/javascript" src="lib/vue.js" ></script>
+		<script type="text/javascript" src="lib/axios.min.js" ></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#app1{
+				height: 160px;
+				overflow-x: auto;
+				overflow-y: hidden;
+			}
+			#app1 ul{
+				height: 160px;
+				background: #CCCCCC;
+			}
+			#app1 li{
+				float: left;
+				width: 160px;
+				height: 160px;
+				text-align: center;
+				list-style: none;
+			}
+			#app1 img{
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app1">
+			<ul :style="{width:width}">
+				<li v-for="i in leagueArr">
+					<img :src="i.logo || 'https://tongdaobigdata.oss-cn-beijing.aliyuncs.com/dataimage/logo/league/14969110498059738.png'"/>
+					<p>{{i.name}}</p>
+				</li>
+			</ul>
+		</div>
+		<!--第二参数为当前索引-->
+		<div id="app2">
+			<p v-for="(i,idx) in listData">{{idx + " " + i.name + " " + i.age}}</p>
+			<!--可用of代替in-->
+			<h3 v-for="i of listData">{{i.name}}</h3>
+		</div>
+		<script>
+			var app1 = new Vue({
+				el:"#app1",
+				data:{
+					leagueArr:[]
+				},
+				created:function () {					
+					axios.get('json/leaguelist.json')
+					.then(function (response) {
+						app1.leagueArr = response.data.leagues;
+					})					
+				},
+				computed:{
+					width:function () {
+						return this.leagueArr.length * 160 + 'px'
+					}					
+				}
+			})
+			var app2 = new Vue({
+				el:'#app2',
+				data:{
+					listData:[
+						{name:'name1',age:'age1'},
+						{name:'name2',age:'age2'},
+						{name:'name3',age:'age3'}
+					]
+				}
+			})
+			//数组更新
+			//1，变异(改变原数组)
+			//push()    新增最后一项
+			//pop()     删除最后一项
+			//shift()   删除第一项
+			//unshift() 新增第一项
+			//splice()  splice(index,howmany,item1,.....,itemX)下标,删除个数，新增为
+			//sort()    排序; 拓展：按数字大小排序arr.sort(function(a,b){return a - b})从小到大
+			//reverse() 倒序
+			
+			//2，替换数组(不改变原数组)
+			//filter() 过滤，例：app2.listData.filter(function(obj){return obj.age == 'age2'})//返回数组
+			//concat() 链接数组，例：arr1.concat(arr2,arr3,...)
+			//slice(start,end)截取数组，end可不选，标识从start到最后；start可为负，-1代表最后一项；
+			
+			//检测不到的数组变动.不是响应式的
+			//1, vm.items[indexOfItem] = newValue; 利用索引直接设置一项；
+				//可更改为Vue.set(vm.items,indexOfItem,newValue);
+					//等于vm.$set(vm.items, indexOfItem, newValue)
+				//或vm.items.splice(indexOfItem, 1, newValue)；
+			
+			//2, vm.items.length = newLength; 修改数组长度
+				//可更换为vm.items.splice(newLength)
+		</script>
+		<!--v-for对象(三个参数value,key,idx)-->
+		<div id="app3">
+			<p v-for="(value,key,idx) in listObj" :key="idx">{{idx+","+ key +" : "+value}}</p>
+		</div>
+		<script>
+			var app3 = new Vue({
+				el:'#app3',
+				data:{
+					listObj:{
+						name:'name',
+						age:'12',
+						sex:'X'
+					}
+				}
+			})
+			//对象的更新
+			//vue能检测到数据修改，不能检测到对象的新增删除
+			//例：app3.listObj.name = 'name2' 实时更新 app3.listObj.name3 = 'name3'检测不到
+			//可用set来新增实现响应式
+			//例Vue.set(app3.listObj,'name3','name3'); 或 app3.$set(app3.listObj,'name3','name3');
+			
+			//添加多个属性 es6Object.assign(目标对象,对象1,对象2,对象3)
+			//Object.assign(app3.listObj,{name1:"name1",name2:"name2"})//非响应式
+			//将返回值付给原值实现响应式，即
+			//app3.listObj = Object.assign({},app3.listObj,{name1:"name1",name2:"name2"})
+		</script>
+		<!--尽可能在使用 v-for 时提供 key-->
+		
+		<!--显示过滤/排序结果-->
+		<div id="app4">
+			<!--可用计算属性-->
+			<span v-for="num in evenNumbers">{{num}},</span><br />
+			<!--也可用方法-->
+			<span v-for="num in even(numbers)">{{num}},</span><br />
+			<!--取整-->
+			<span v-for="i in 10">{{i}},</span><br />
+			<!--template分组，渲染多个元素-->
+			<template v-for="i in 5">
+				<input type="checkbox"/>
+				<span>{{i}}</span><br />
+			</template>
+			<!--v-for with v-if-->
+			<!--v-for 的优先级比 v-if 更高-->
+			<span v-for="i in 10" v-if="i % 2">{{i}}</span>
+		</div>
+		<script>
+			var app4 = new Vue({
+				el:'#app4',
+				data:{
+					numbers:[1,2,3,4,5,6,7,8,9,10]
+				},
+				computed:{
+					evenNumbers:function () {
+						return this.numbers.filter(function (num) {
+							return num % 2 === 0
+						})
+					}
+				},
+				methods:{
+					even:function (numbers) {
+						return numbers.filter(function (num) {
+							return num % 2 === 0
+						})
+					}
+				}
+			})
+		</script>
+		
+		<!--组件里的v-for-->
+		<div id="app5">
+			<!--prevent阻止默认行为-->
+			<form @submit.prevent="addNew">
+				<input type="text" v-model="newName" placeholder="输入新名字"/>
+				<button>添加</button>
+			</form>
+			<ul>
+				<!--
+					is="my-template"属性，这与 <my-template>相同；					
+					因为在<ul>元素内只有<li>元素会被看作有效内容，可避免浏览器解析错误；
+				-->
+				<!--2.2后key必须-->
+				<!--@remove自定义事件-->
+				<li 
+					is="my-template" 
+					v-for="(name,idx) in nameList" 
+					:key="idx" 
+					:name="name" 
+					@remove="nameList.splice(idx,1)"
+				></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			//$emit();1、父组件可以使用 props 把数据传给子组件2、子组件可以使用 $emit 触发父组件的自定义事件
+			Vue.component("my-template",{
+				props:['name'],
+				template:'<li>{{name}}<button @click="$emit(\'remove\')">删除</button></li>'
+			})
+			var app5 = new Vue({
+				el:'#app5',
+				data:{
+					newName:'',
+					nameList:['name1','name2','name3']
+				},
+				methods:{
+					addNew:function () {
+						this.nameList.push(this.newName);
+						this.newName = "";
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

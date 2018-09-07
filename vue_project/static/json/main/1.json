@@ -1,0 +1,90 @@
+{
+	"name": "马贝拉",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 0,
+					"show": "西班牙度假酒店和城市酒店中规模最大的连锁酒店，是西班牙最大的酒店管理公司之一所创立，同时也是阳光海岸上最为著名的度假村之一，期待为您奉上前卫时尚的魅力和永恒的奢华。",
+					"imgs": [
+						"static/img/main/1/1_1.png",
+						"static/img/main/1/1_2.jpg",
+						"static/img/main/1/1_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 0,
+					"show": "让四面的风吹动您的衣衫，让阳光照射在您的脸庞，让美好的风景肆意眺望，这样画面并不只是在小说当中，在马贝拉您能真真切切的感受到这样的美好，舒适宜人的住宿条件，让您不再想家。",
+					"imgs": [
+						"static/img/main/1/2_1.png",
+						"static/img/main/1/2_2.png",
+						"static/img/main/1/2_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 0,
+					"show": "美景让人精神愉悦，美食让人幸福倍增，酒店不光风景秀丽，饮食方面也十分丰盛，可以享受由当地传奇主厨带来的烹饪革命。",
+					"imgs": [
+						"static/img/main/1/3_1.jpg",
+						"static/img/main/1/3_2.jpg",
+						"static/img/main/1/3_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 0,
+					"show": "仅需从美丽的马贝拉中心散步走上一小段路程，您就会发现壮美的景色与精致的便利设施。在酒店水疗馆享受一段特色理疗，或是躺在泳池旁边的巴厘岛床上饮上一杯冰镇的Cava。所有一切只有在马贝拉的黄金地带上的酒店才可享受到。",
+					"imgs": [
+						"static/img/main/1/4_1.jpg",
+						"static/img/main/1/4_2.jpg",
+						"static/img/main/1/4_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 5,
+			"title": "球场",
+			"mains": [
+				{
+					"star": 0,
+					"show": "每天都会有专业的维护师傅进行护理，不论是草皮的平整度还是质量都是国际一流水平，同时有大量的场地供您选择，完美解决训练和比赛的任何问题。",
+					"imgs": [
+						"static/img/main/1/5_1.jpg",
+						"static/img/main/1/5_2.jpg",
+						"static/img/main/1/5_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "国外专业的健身器材，功能齐全，保证能够有条不紊的完成力量训练。",
+					"imgs": [
+						"static/img/main/1/6_1.jpg",
+						"static/img/main/1/6_2.jpg",
+						"static/img/main/1/6_3.jpg"
+					]
+				}
+			]
+		}
+	]
+}

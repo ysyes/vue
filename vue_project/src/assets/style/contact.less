@@ -1,0 +1,303 @@
+.header{
+	background: url(../img/contact/bg_contact_picture@2x.png) center;
+	background-size: cover;
+}
+.header ul{
+	width: 90%;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+.header ul li{
+	height: 130px;
+	float: left;
+}
+.header ul li img{
+	width: 80px;
+	margin: 25px 0;
+	margin-right: 30px;
+}
+.header ul li h3{
+	padding-top: 34px;
+	font-size: 28px;
+	line-height: 30px;
+	color: #FFFFFF;
+}
+.header ul li p{
+	padding-top: 14px;
+	font-size: 20px;
+	line-height: 20px;
+	color: #FFFFFF;
+}
+.way{
+	width: 90%;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding-bottom: 26px;
+	border-bottom: 1px solid #D7D7D7;
+}
+.way li{
+	width: 420px;
+	max-width: 100%;
+	float: left;
+}
+.way li p{
+	height: 24px;
+	line-height: 24px;
+	font-size: 18px;
+	color: #F7A008;
+	padding-left: 30px;
+	margin-top: 20px;
+	background: url(../img/contact/icon_address@2x.png) no-repeat left center;
+	background-size: auto 18px;
+}
+.way li:nth-child(1) p{
+	background-image: url(../img/contact/icon_address@2x.png);
+	background-position-x: 4px;
+}
+.way li:nth-child(2) p{
+	background-image: url(../img/contact/icon_phone@2x.png);
+}
+.way li:nth-child(3) p{
+	background-image: url(../img/contact/icon_e-mail@2x.png);
+}
+.way li:nth-child(4) p{
+	background-image: url(../img/contact/icon_wechat@2x.png);
+}
+.way li:nth-child(5) p{
+	background-image: url(../img/contact/icon_weibo@2x.png);
+}
+.way li span{
+	display: block;
+	color: #323232;
+	font-size: 16px;
+	margin-top: 10px;
+}
+.message{
+	width: 90%;
+	max-width: 1300px;
+	padding:40px 0;
+	margin: 0 auto;
+}
+.message h1{
+	font-size: 28px;
+	color: #323232;
+}
+.message .title{
+	border-bottom: 1px solid #D7D7D7;
+	padding-top: 20px;
+	padding-bottom: 6px;
+}
+.message .title.focue{
+	border-bottom: 1px solid #f7a008;
+}
+.message .title span{
+	float: left;
+	font-size: 16px;
+	color: #323232;
+	line-height: 30px;
+}
+.message .title input{
+	float: left;
+	height: 30px;
+	width: calc(100% - 100px);
+	line-height: 30px;
+	border: none;
+	outline: none;
+	background: none;
+	font-size: 18px;
+	font-weight: bold;
+}
+.message textarea{
+	width: 100%;
+	height: 280px;
+	margin: 20px 0;
+	padding:14px 12px;
+	background: rgba(240,240,240,1);
+	-webkit-box-shadow: inset 0px 7px 16px 0px rgba(46,46,46,0.08);
+    -moz-box-shadow:inset 0px 7px 16px 0px rgba(46,46,46,0.08);
+    box-shadow:inset 0px 7px 16px 0px rgba(46,46,46,0.08);
+    resize: none;
+    border:1px solid #e6e6e6;
+    font-size: 16px;
+    color: #2E2E2E;
+	outline: none;
+}
+.message textarea:focus{
+	border-color: #f7a008;
+}
+.message .addimgs{
+	border-bottom: 1px solid #D7D7D7;
+}
+.message .addimgs li{
+    float: left;
+    margin-right:20px;
+    margin-bottom: 20px;
+    width:160px;
+    height:120px;
+    border:1px solid #dbdbdb;
+	box-shadow:0px 7px 16px 0px rgba(46,46,46,0.08);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-align: center;
+    position: relative;
+}
+.message .addimgs li.show{
+	background: #f0f0f0 no-repeat center;
+	background-size: contain;
+}
+.message .addimgs li.show div.del{
+	position: absolute;
+    right:-10px;
+    top:-10px;    
+	width: 30px;
+	height: 30px;
+	background: rgba(0,0,0,0.5);
+	border-radius: 15px;
+	font-size: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+	z-index: 7;
+	cursor: pointer;
+}
+.message .addimgs li.add{
+	background: #f0f0f0 url(../img/contact/icon_add@2x.png) no-repeat center 20px;
+    background-size: 45px 45px;
+}
+.message .addimgs li.add:hover{
+	background: #ECECEC url(../img/contact/icon_add@2x.png) no-repeat center 20px;
+	background-size: 45px 45px;
+}
+.message .addimgs li p{
+    font-size: 14px;
+    color: #888888;
+    margin-top:70px;
+}
+.message .addimgs li input{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    opacity: 0;    
+    cursor: pointer;
+    z-index: 5;
+}
+.message button{
+	width:110px;
+	height:46px;
+	margin-top: 20px;
+	float: right;
+	background:rgba(216,216,216,1);
+	border-radius:4px;
+	outline: none;
+	border: none;
+	text-align: center;
+	font-size: 16px;
+	color: #FFFFFF;
+}
+.message button.checked{
+	background: #F7A008;
+	cursor: pointer;
+}
+#alertBox{
+	height: 40px;
+	padding: 0 20px;
+	transform: translateX(-50%);
+	-ms-transform:translateX(-50%);
+	-moz-transform:translateX(-50%);
+	-webkit-transform:translateX(-50%);
+	-o-transform:translateX(-50%);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	border-radius: 3px;
+	background: rgba(0,0,0,0.5);
+	font-size: 14px;
+	line-height: 40px;
+	text-align: center;
+	white-space: nowrap;
+	color: white;
+	display: none;
+}
+#alertBox.show{
+	display: block;
+}
+#loading{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 30px;
+	left: 0;
+	z-index: 99;
+	background: rgba(0,0,0,0.2);
+}
+#loading img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -30px;
+	margin-top: -12px;
+}
+@media only screen and (max-width: 500px) {
+	.header ul li{
+		height: 100px;
+		float: left;
+	}
+	.header ul li img{
+		width: 50px;
+		margin: 25px 0;
+		margin-right: 20px;
+	}
+	.header ul li h3{
+		padding-top: 26px;
+		font-size: 20px;
+		line-height: 20px;
+		color: #FFFFFF;
+	}
+	.header ul li p{
+		padding-top: 10px;
+		font-size: 18px;
+		line-height: 20px;
+		color: #FFFFFF;
+	}
+	
+	/*地址*/
+	.way li p{
+		margin-top: 10px;
+	}
+	.way li span{
+		margin-top: 5px;
+	}
+	/*图片*/
+	.message{
+		padding: 20px 0;
+	}
+	.message h1{
+		font-size: 24px;
+	}
+	.message textarea{
+		height: 200px;
+		margin: 10px 0;
+	}
+	.message .addimgs li{
+		margin-right: 10px;
+	    margin-bottom: 10px;
+	    width: 120px;
+	    height: 90px;
+	}
+	.message .addimgs li.add {
+	    background: #f0f0f0 url(../img/contact/icon_add@2x.png) no-repeat center 20px;
+	    background-size: 30px 30px;
+	}
+	.message .addimgs li.add:hover{
+		background: #ECECEC url(../img/contact/icon_add@2x.png) no-repeat center 20px;
+		background-size: 30px 30px;
+	}
+	.message .addimgs li p{
+		font-size: 12px;
+	    color: #888888;
+	    margin-top: 54px;
+	}
+}

@@ -1,0 +1,148 @@
+{
+	"name": "济州岛",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 5,
+					"show": "坐拥良好的自然环境，比邻韩国著名景点使得酒店别具特色，气氛闲适，远离喧嚣，是球队放松、训练、比赛的明智选择之一。",
+					"imgs": [
+						"static/img/main/5/1_1.jpeg",
+						"static/img/main/5/1_2.jpg",
+						"static/img/main/5/1_3.png"
+					]
+				}, {
+					"star": 4,
+					"show": "酒店位于交通便利之处，以此为住宿据点，您可轻松前往济州岛的各大热门商区和景点。舒适温馨的客房内，生活必需品和配套设施应有尽有，旨在为您缔造宾至如归的住宿体验。",
+					"imgs": [
+						"static/img/main/5/1_4.png",
+						"static/img/main/5/1_5.png",
+						"static/img/main/5/1_6.png"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 5,
+					"show": "现代简洁的室内装修和温暖的床具构成的实用性豪华的客房，让您在休息之余能够得到充分的放松。",
+					"imgs": [
+						"static/img/main/5/2_1.png",
+						"static/img/main/5/2_2.png",
+						"static/img/main/5/2_3.png"
+					]
+				}, {
+					"star": 4,
+					"show": "酒店共拥有百余间客房，包括标准房、豪华房、双床房、等多种房型，能够满足您的各种入住需求。",
+					"imgs": [
+						"static/img/main/5/2_4.png",
+						"static/img/main/5/2_5.png",
+						"static/img/main/5/2_6.png"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 5,
+					"show": "使用新鲜自然食材做出的各种各样的料理，让您领略济州岛带给您不一样的味觉享受。",
+					"imgs": [
+						"static/img/main/5/3_1.png",
+						"static/img/main/5/3_2.png",
+						"static/img/main/5/3_3.png"
+					]
+				}, {
+					"star": 4,
+					"show": "能品尝韩国正统料理，也可以根据您的需求来定制菜谱，享受家的味道。",
+					"imgs": [
+						"static/img/main/5/3_4.png",
+						"static/img/main/5/3_5.png",
+						"static/img/main/5/3_6.png"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 5,
+					"show": "高级的室内外连通泳池、缓解一天疲劳的桑拿浴室、超豪华多媒体功能会议室、安静舒适的茶室，满足您的各种所需。",
+					"imgs": [
+						"static/img/main/5/4_1.png",
+						"static/img/main/5/4_2.png",
+						"static/img/main/5/4_3.png"
+					]
+				}, {
+					"star": 4,
+					"show": "各种娱乐设施亦会让您在留宿期间享受更多乐趣，此外还有会议室和咖啡厅让您静下心来。",
+					"imgs": [
+						"static/img/main/5/4_4.png",
+						"static/img/main/5/4_5.png",
+						"static/img/main/5/4_6.png"
+					]
+				}
+			]
+		}, {
+			"id": 5,
+			"title": "球场",
+			"mains": [
+				{
+					"star": 0,
+					"show": "拥有三个天然草球场，耐践踏，场地质量等具备非常高的规格，周边空气清新，景色优雅，能够极大提升训练和比赛的兴趣。",
+					"imgs": [
+						"static/img/main/5/5_1.png",
+						"static/img/main/5/5_2.png",
+						"static/img/main/5/5_3.png"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "完善的设施，宽敞宜人的环境，先进的健身器材，拥有良好的健身氛围。",
+					"imgs": [
+						"static/img/main/5/6_1.png",
+						"static/img/main/5/6_2.jpg",
+						"static/img/main/5/6_3.png"
+					]
+				}
+			]
+		}, {
+			"id": 7,
+			"title": "大巴",
+			"mains": [
+				{
+					"star": 0,
+					"show": "空间大，噪音小，座位舒适，可载30~50人，是您的出行之旅重要交通工具。",
+					"imgs": [
+						"static/img/main/5/7_1.png",
+						"static/img/main/5/7_2.jpg",
+						"static/img/main/5/7_3.png"
+					]
+				}
+			]
+		}, {
+			"id": 8,
+			"title": "比赛对手",
+			"mains": [
+				{
+					"star": 0,
+					"show": [
+						"根据具体拉练时间来确定相应对手<br/>● K联赛- 浦项制铁、蔚山现代、济州联FC、大邱 <br/>● K2联赛- 富川FC、安阳、水源FC <br/>● K3联赛- 金浦市民、坡州 <br/>● 大学球队- 檀国大学、弘益大学、关东大学、青州大学等多个韩国大学专业球队",
+						"根据具体拉练时间来确定相应对手<br/>● 高中部- 大成高中、釜慶高中 <br/>● 初中部- 50个韩国初中专业球队 "
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,93 @@
+[
+	{
+		"title": "海外拉练地点-职业球队",
+		"main": [
+			{
+				"country": "西班牙",
+				"citys": [
+					{
+						"id": 1,
+						"city": "马贝拉",
+						"image": "static/img/index/1.png",
+						"recommend": "推荐：中超、中甲"
+					}
+				]
+			}, {
+				"country": "阿联酋",
+				"citys": [
+					{
+						"id": 2,
+						"city": "迪拜",
+						"image": "static/img/index/2.jpg",
+						"recommend": "推荐：中超、中甲"
+					}, {
+						"id": 3,
+						"city": "阿布扎比",
+						"image": "static/img/index/3.jpg",
+						"recommend": "推荐：中超、中甲"
+					}
+				]
+			}, {
+				"country": "日本",
+				"citys": [
+					{
+						"id": 4,
+						"city": "冲绳",
+						"image": "static/img/index/4.jpg",
+						"recommend": "推荐：中超，中甲，中乙，各年龄段梯队"
+					}
+				]
+			}, {
+				"country": "韩国",
+				"citys": [
+					{
+						"id": 5,
+						"city": "济州岛",
+						"image": "static/img/index/5.jpg",
+						"recommend": "推荐：中超，中甲，中乙，各年龄段梯队"
+					}, {
+						"id": 8,
+						"city": "木浦",
+						"image": "static/img/index/8.jpeg",
+						"recommend": "推荐：U18~U23，中甲球队"
+					}
+				]
+			}
+		]
+	}, {
+		"title": "海外拉练地点-青少年球队",
+		"main": [
+			{
+				"country": "韩国",
+				"citys": [
+					{
+						"id": 5,
+						"city": "济州岛",
+						"image": "static/img/index/5.jpg",
+						"recommend": "推荐：中超，中甲，中乙，各年龄段梯队"
+					}, {
+						"id": 6,
+						"city": "天安",
+						"image": "static/img/index/6.jpeg",
+						"recommend": "推荐：U12~U19"
+					}, {
+						"id": 7,
+						"city": "统营",
+						"image": "static/img/index/7.png",
+						"recommend": "推荐：U12~U19，  中乙部分球队"
+					}, {
+						"id": 8,
+						"city": "木浦",
+						"image": "static/img/index/8.jpeg",
+						"recommend": "推荐：U18~U23，中甲球队"
+					}, {
+						"id": 9,
+						"city": "昌原",
+						"image": "static/img/index/9.png",
+						"recommend": "推荐：U12~U19 ， 中乙部分球队"
+					}
+				]
+			}
+		]
+	}
+]

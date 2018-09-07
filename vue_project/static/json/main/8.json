@@ -1,0 +1,116 @@
+{
+	"name": "木浦",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 0,
+					"show": "2009年8月正式运营，建设费用718亿韩币，位于全罗南道木浦市大阳洞。有山有水，环境舒适，风景优美，是韩国职业球队热门的拉练地点。",
+					"imgs": [
+						"static/img/main/8/1_1.png",
+						"static/img/main/8/1_2.jpeg",
+						"static/img/main/8/1_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 0,
+					"show": "专门为职业球队设计，非常简约干净。房间设有吹风机，小冰箱，洗浴用品可免费使用。125个房间700名球员可同时入住。",
+					"imgs": [
+						"static/img/main/8/2_1.gif",
+						"static/img/main/8/2_2.gif",
+						"static/img/main/8/2_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 0,
+					"show": "每天食用不同的菜品，让您的营养更加丰富，可以根据球队的要求加改菜品。100张餐桌可同时为500名球员提供就餐。",
+					"imgs": [
+						"static/img/main/8/3_1.jpeg",
+						"static/img/main/8/3_2.png",
+						"static/img/main/8/3_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 0,
+					"show": "均设有优质设施，如澡堂，洗浴间，蒸汽房，多媒体间，台球，乒乓球，洗衣机，制冰机，烘干机（球鞋）等。",
+					"imgs": [
+						"static/img/main/8/4_1.jpeg",
+						"static/img/main/8/4_2.gif",
+						"static/img/main/8/4_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 5,
+			"title": "球场",
+			"mains": [
+				{
+					"star": 0,
+					"show": "三块天然草，四块人造草。都是符合国际专业球场规格。有专业的草皮专家实时管理，草坪质量非常良好，非常适合职业球队使用。",
+					"imgs": [
+						"static/img/main/8/5_1.png",
+						"static/img/main/8/5_2.jpg",
+						"static/img/main/8/5_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "基地里设有健身器材提供给球员。28种建设器材51种健身方法可帮助球员提高。",
+					"imgs": [
+						"static/img/main/8/6_1.jpeg",
+						"static/img/main/8/6_2.jpeg",
+						"static/img/main/8/6_3.jpeg"
+					]
+				}
+			]
+		}, {
+			"id": 7,
+			"title": "大巴",
+			"mains": [
+				{
+					"star": 0,
+					"show": "座位舒适，空间大，安全可靠。可载35人~50人，司机拥有多年的开车经历。",
+					"imgs": [
+						"static/img/main/8/7_1.png",
+						"static/img/main/8/7_2.jpg",
+						"static/img/main/8/7_3.png"
+					]
+				}
+			]
+		},{
+			"id": 8,
+			"title": "比赛对手",
+			"mains": [
+				{
+					"star": 0,
+					"show": [
+						"根据具体拉练时间来确定相应对手<br/>● K1：全北现代、全南天龙、大邱FC<br/>● K2： 光州FC、釜山、大田市民<br/>● K3： 全州市民球队、青州市民球队<br/>● 大学：木浦大学、顺天大学、全南科技大学、中原大学、庆云大学、韩丽大学、初唐大学",
+						"根据具体拉练时间来确定相应对手<br/>● 初中： 锡贤初中、永浩初中、木浦熔岩初中、木浦西部初中、木浦山正初中、西海初中<br/>● 高中： 永兴高中、门泰高中、木浦德仁高中、木浦高中、光阳制铁高中"
+					]
+				}
+			]
+		}
+	]
+}

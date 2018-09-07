@@ -1,0 +1,104 @@
+{
+	"name": "",
+	"list": [
+		{
+			"id": 1,
+			"title": "酒店",
+			"mains": [
+				{
+					"star": 0,
+					"show": "",
+					"imgs": [
+						"static/img/main/1/1_1.jpg",
+						"static/img/main/1/1_2.jpg",
+						"static/img/main/1/1_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 2,
+			"title": "房间",
+			"mains": [
+				{
+					"star": 0,
+					"show": "",
+					"imgs": [
+						"static/img/main/1/2_1.jpg",
+						"static/img/main/1/2_2.jpg",
+						"static/img/main/1/2_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 3,
+			"title": "餐饮",
+			"mains": [
+				{
+					"star": 0,
+					"show": "",
+					"imgs": [
+						"static/img/main/1/3_1.jpg",
+						"static/img/main/1/3_2.jpg",
+						"static/img/main/1/3_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 4,
+			"title": "其他设施",
+			"mains": [
+				{
+					"star": 0,
+					"show": "",
+					"imgs": [
+						"static/img/main/1/4_1.jpg",
+						"static/img/main/1/4_2.jpg",
+						"static/img/main/1/4_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 5,
+			"title": "球场",
+			"mains": [
+				{
+					"star": 0,
+					"show": "",
+					"imgs": [
+						"static/img/main/1/5_1.jpg",
+						"static/img/main/1/5_2.jpg",
+						"static/img/main/1/5_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 6,
+			"title": "健身房",
+			"mains": [
+				{
+					"star": 0,
+					"show": "",
+					"imgs": [
+						"static/img/main/1/6_1.jpg",
+						"static/img/main/1/6_2.jpg",
+						"static/img/main/1/6_3.jpg"
+					]
+				}
+			]
+		}, {
+			"id": 7,
+			"title": "大巴",
+			"mains": [
+				{
+					"star": 0,
+					"show": "",
+					"imgs": [
+						"static/img/main/1/7_1.jpg",
+						"static/img/main/1/7_2.jpg",
+						"static/img/main/1/7_3.jpg"
+					]
+				}
+			]
+		}
+	]
+}
