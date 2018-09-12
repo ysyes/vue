@@ -3,13 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from 'axios'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
-Vue.prototype.$axios= axios
-Vue.use(ElementUI);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -17,3 +13,7 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+//切换路由后回滚顶部
+router.afterEach((to,from,next) => {
+  window.scrollTo(0,0);
+});

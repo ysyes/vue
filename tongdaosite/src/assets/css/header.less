@@ -1,0 +1,167 @@
+html,body,#app{
+    width: 100%;
+    min-width: 1200px;
+    background: #000;
+}
+#app{
+    padding-top: 56px;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 56px;
+    background: #000;
+    border-bottom: 1px solid #807100;
+    div.title1 {
+        width: 1000px;
+        height: 56px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        ul {
+            display: flex;
+            align-items: center;
+            li {
+                height: 56px;
+                padding: 0 40px;
+                line-height: 56px;
+                font-size: 14px;
+                color: #808285;
+                cursor: pointer;
+                &.checked {
+                    color: #FFE100;
+                }
+            }
+        }
+    }
+    div.title2 {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        &>div {
+            display: flex;
+            justify-content: flex-end;
+            width: 1000px;
+            margin: 0 auto;
+            li {
+                width: 100px;
+                font-size: 14px;
+                color: #afafaf;
+                margin-top: 14px;
+                cursor: pointer;
+                &:hover {
+                    color: #FFFFFF;
+                }
+            }
+            &>div {
+                padding-bottom: 30px;
+            }
+            &>div:nth-child(1) {
+                margin-right: 512px;
+            }
+            &>div:nth-child(2) {
+                margin-right: 374px;
+            }
+        }
+    }
+}
+
+//footer
+@border: 1px solid #3c3b3b;
+footer {
+    width: 100%;
+    height: 300px;
+    background: #1e1e1e;
+    color: #8b8b8b;
+    .footerTop {
+        border-bottom: @border;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        &>div {
+            border-right: @border;
+        }
+        .footerTL ul {
+            display: flex;
+            li {
+                width: 110px;
+                h4 {
+                    font-size: 14px;
+                }
+                span {
+                    display: block;
+                    font-size: 12px;
+                    line-height: 21px;
+                    a{
+                        color: #8b8b8b;
+                    }
+                }
+            }
+        }
+        .footerTR {
+            width: 436px;
+            &>div {
+                border-bottom: @border;
+                display: flex;
+                padding-bottom: 14px;
+                ul {
+                    padding: 0 22px;
+                    li {
+                        display: flex;
+                        align-items: center;
+                        font-size: 12px;
+                        margin-bottom: 8px;
+                    }
+                }
+                ul:first-child {
+                    width: 154px;
+                    border-right: @border;
+                    span{
+                        margin-right:12px;
+                    }
+                }
+                ul:nth-child(2) {
+                    width: 284px;
+                    li{
+                        margin-bottom: 10px;
+                        span{
+                            margin-left:12px;
+                        }
+                    }  
+                }
+            }
+            &>ul{
+                display: flex;
+                li{
+                    flex: 1;
+                    height: 70px;
+                    border-right: @border;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        display: block;
+                    }
+                    img:nth-child(2){
+                        margin-left: 8px;
+                    }
+                }
+                li:last-child{
+                    border-right: none;
+                }
+            }
+        }
+    }
+    .footerBottom {
+        width: 985px;
+        margin: 0 auto;
+        padding: 20px 0;
+        p{
+            font-size: 12px;
+            color: #727171;
+        }
+    }
+}
