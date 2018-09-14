@@ -118,6 +118,7 @@
 				mousewheelControl: true,
 				watchSlidesProgress: true,
 				pagination: '.swiper-pagination',
+				paginationClickable :true,
 			});
 		},
 		methods:{ //事件及方法

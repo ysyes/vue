@@ -2,10 +2,10 @@
 	<div class="box">
 		<div class="banner" :style="{height:maxHight+'px'}">
 			<ul>
-				<li v-for="i in 4" :key="i" :class="{checked:idx==i}">{{i}}</li>
+				<li v-for="i in bannerNum" :key="i" :class="{checked:idx==i}"></li>
 			</ul>
 			<div class="pin">
-				<span v-for="i in 4" :key="i" :class="{checked:idx==i}" @mouseenter="pinEnter(i)" @mouseleave="pinLeave"></span>
+				<span v-for="i in bannerNum" :key="i" :class="{checked:idx==i}" @mouseenter="pinEnter(i)" @mouseleave="pinLeave"></span>
 			</div>
 		</div>
 		<div class="cfa">
@@ -25,6 +25,7 @@
 		name: 'Home',
 		data() {
 			return {
+				bannerNum:2,
 				idx: 1,
 				time: 0
 			}
@@ -39,7 +40,7 @@
 		},
 		methods: {
 			timeFn() {
-				if(this.idx == 4) {
+				if(this.idx == this.bannerNum) {
 					this.idx = 1;
 				} else {
 					this.idx += 1;

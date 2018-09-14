@@ -4,7 +4,11 @@ import Home from '@/components/home/home'
 import About from '@/components/about/about'
 import News from '@/components/about/news'
 import Partner from '@/components/about/partner'
-import Sever from '@/components/tameSever/tameSever'
+import Sever from '@/components/businesses/tameSever'
+import Guessing from '@/components/businesses/guessing'
+import Case from '@/components/case/case'
+import Live from '@/components/live/live'
+
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +37,21 @@ export default new Router({
       path: '/sever',
       name: 'Sever',
       component: Sever
+    },
+    {
+      path: '/case',
+      name: 'Case',
+      component: Case
+    },
+    {
+      path: '/live',
+      name: 'Live',
+      component: Live
+    },
+    {
+      path: '/guessing',
+      name: 'Guessing',
+      component: Guessing
     }
   ]
 })

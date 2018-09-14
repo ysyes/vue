@@ -1,5 +1,5 @@
 .gather_outer{   
-    background: url(../../assets/img/tameSever/court.png) no-repeat;
+    background: url(../../assets/img/businesses/court.png) no-repeat;
     background-size: 100%;
     background-position: 0 86%;
     width: 100%;
@@ -111,15 +111,25 @@
 }
 .gather_nav{
     position: fixed;
-    top: 100px;
-    left: 100px;
+    top: 12%;
+    left: 10%;
+    z-index: 6;
     font-size: 16px;
     ul{
-        color: #FFE100;
+        
         li{
             color: #858585;
-            line-height: 36px;
-            font-size: 12px;
+            line-height: 46px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        li:nth-child(1){
+            font-size: 24px;
+            color: #FFE100;
+            cursor: default; 
+        }
+        .navColor{
+            color: #FFE100;
         }
     }
 }
@@ -127,4 +137,84 @@
     position: fixed;
     right: 0;
     bottom: 0;
+}
+
+
+.economics{
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    .div1{
+        height: 182px;
+        margin-top: 30px;
+    }
+    .div2,.div3{
+        height: 210px;
+        margin-top: 50px;
+    }
+    .gather_left{
+        width: 370px;
+        float: left;
+        color: #FFFFFF;
+        margin-left:150px ;
+        div p:nth-child(1){
+            color: #ffe100;
+            font-size: 38px;
+        }
+        div p:nth-child(2){
+            color: #ffe100;
+            font-size: 15px;
+        }
+        div p:nth-child(3){
+            font-size: 18px;
+            margin-top: 27px;
+            
+        }
+        
+    }
+    .gather_right{
+        float: right;
+        
+    }
+    @media screen and (max-width: 1366px) {
+        .div1{
+            height: 152px;
+            margin-top: 10px;
+            img{
+                height: 152px;
+            }
+        }
+        .div2,.div3{
+            height: 180px;
+            margin-top: 20px;
+            img{
+                height: 180px;
+            }
+        }
+        .gather_left{
+            width: 370px;
+            float: left;
+            color: #FFFFFF;
+            margin-left:150px ;
+            div p:nth-child(1){
+                color: #ffe100;
+                font-size: 34px;
+            }
+            div p:nth-child(2){
+                color: #ffe100;
+                font-size: 14px;
+            }
+            div p:nth-child(3){
+                font-size: 16px;
+                margin-top: 27px;
+                
+            }
+            
+        }
+        .gather_right{
+            float: right;
+            margin-right: 60px;
+        }
+    }
 }

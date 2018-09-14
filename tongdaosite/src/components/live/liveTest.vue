@@ -1,7 +1,5 @@
 <template>
-	<div class="live" :style="{height:maxHight+'px'}">
-		<iframe src="http://www.cfadata.cn/fans/live.html" width="100%" height="100%"></iframe>
-	</div>
+	
 </template>
 
 <script>
@@ -40,6 +38,6 @@
 	}
 </script>
 
-<style scoped lang="less">
-@import "./live.less";
+<style>
+@import "liveTest.less";
 </style>
