@@ -31,7 +31,10 @@
     overflow: hidden;
     p:nth-child(1){
         font-size: 28px;
-        margin-top: 32px;
+        margin-top: 42px;
+        @media screen and (max-width: 1366px) {
+            margin-top: 30px;
+        }
     }
     p:nth-child(2){
         font-size: 16px;
@@ -198,6 +201,13 @@
     width: 100%;
     height: 100%;
     background: black;
+    background-image: url(../../assets/img/about/tdback.png);
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    @media screen and (max-width: 1366px) {
+        background-size: 47% 101%;
+    }
+    
 }
 .joinus_con{
     width: 660px;
