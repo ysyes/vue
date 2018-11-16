@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>介绍</title>
+		<script src="../lib/vue.js"></script>
+		<style type="text/css">
+			#app div{
+				background: #CCCCCC;
+			}
+			.v-enter-active, .v-leave-active {
+			  transition: all .5s;
+			}
+			.v-enter, .v-leave-to /* .fade-leave-active below version 2.1.8 */ {
+				transform: translateX(100px);
+			  	opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="app">
+			<button @click="show=!show">点击</button>
+			<transition>
+				<div v-show="show">
+					<p >动画</p>
+				</div>
+			</transition>
+		</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el:'#app',
+				data:{
+					show:true
+				}
+			})
+		</script>
+	</body>
+</html>
